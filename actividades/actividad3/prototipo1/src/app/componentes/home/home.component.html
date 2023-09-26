@@ -1,0 +1,35 @@
+<div class="container-fluid py-4">
+<div  *ngFor="let em of empresa" class="container-fluid p-4"  class="d-flex justify-content-center align-items-center">
+<img src="{{em.imagen_home}}" width="300" height="250" class="img-fluid" alt="...">
+</div>
+
+
+<div class="container-fluid py-4"  class="d-flex justify-content-center align-items-center">
+  <form>
+    <div class="input-group mb-3">
+      <span ><input type="text" [(ngModel)]="descripcion" [ngModelOptions]="{standalone: true}" (keyup)="buscar()"  class="col-xs-4" class="rounded" style="width: 500px;" class="form-control" placeholder="¿Que servicios buscas?" aria-label="Recipient's username" aria-describedby="basic-addon2"></span>
+      <div class="input-group-append">
+        <button class="btn btn-outline-primary" type="button">
+          <img src="./assets/lupa.png" height="15px" alt="">
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+
+
+<div class="container-fluid py-4">
+<div class="row my-4 text-center" >
+    <div *ngFor="let s of servicios"class="col-md-4 p-4">
+      <div class="card bg-light card-project" class="shadow p-3 mb-5 bg-body rounded">
+        <div  class="container-fluid py-2" style="background-color: rgb(255, 255, 255);">
+        <div class="card-body">
+          <h2 style="font-size: large;">Servicio: {{s.descripcion}}</h2>
+          <p style="font-size: small;">Duracion de mantenimiento: {{s.duracion}}</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
