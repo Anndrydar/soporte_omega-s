@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioEmpresaService } from 'src/app/servicios/servicio-empresa.service';
+import { ServicioInformacionService } from 'src/app/servicios/servicio-informacion.service';
 import { ServicioTecnicoService } from 'src/app/servicios/servicio-tecnico.service';
 
 @Component({
@@ -10,7 +11,10 @@ import { ServicioTecnicoService } from 'src/app/servicios/servicio-tecnico.servi
 export class HomeComponent  implements OnInit{
   servicios: any;
   empresa: any;
+  productos: any;
   descripcion: String;
+  social: any;
+  mis: any;
 
   opciones = [
 
@@ -21,11 +25,14 @@ export class HomeComponent  implements OnInit{
 
   ]
   constructor(private servicio:ServicioTecnicoService,
-    private servicio2: ServicioEmpresaService
+    private servicio2: ServicioEmpresaService,
+    private servicio3: ServicioInformacionService
     ){}
   ngOnInit(): void {
   this.verServicios();
   this.verImagenHome();
+  this.verRedSocial();
+  this.verEnlaces();
 }
 
  verServicios(){
@@ -49,6 +56,37 @@ verImagenHome(){
   this.servicio2.verEmpresa().subscribe(
     res=>{
    this.empresa = res;
+    }
+  )
+}
+
+
+verRedSocial(){
+    this.servicio3.verRedSocial().subscribe(
+      res=>{
+      this.social = res
+      console.log(res)
+      }
+    )
+}
+
+
+
+
+verMision(){
+  this.servicio3.verMision().subscribe(
+    res=>{
+      this.mis = res
+      console.log(res)
+    }
+  )
+}
+
+
+verEnlaces(){
+  this.servicio2.verEnlace().subscribe(
+    res =>{
+     this.productos = res;
     }
   )
 }

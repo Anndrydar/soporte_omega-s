@@ -1,7 +1,8 @@
-<div class="container-fluid py-4" >
+<div class="container-fluid " >
   <nav class="navbar bg-body-tertiary fixed-top" style="background-color: rgb(25, 25, 43);">
     <div class="container-fluid">
-      <a *ngFor="let em of empresa" class="navbar-brand" href=""><img src="{{em.imagen_logo}}" height="25px" alt=""><small style="color: white;">{{em.nombre}}</small></a>
+      <a *ngFor="let em of empresa" class="navbar-brand" href=""><img src="{{em.imagen_logo}}" height="20px" alt=""><small style="color: white;">{{em.nombre}}</small>
+      </a>
       <div class="d-flex align-items-center">
         <a class="dropdown-item" href=""><img src="./assets/sesion.png" height="15px" alt="" ><small style="color: white;"> Iniciar Sesion </small></a>
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -38,26 +39,4 @@
       </div>
     </div>
   </nav>
-  <div class="container-fluid py-2">
-    <div class="position-fixed" >
-  <ul  class="nav nav-pills">
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" style="color: black;" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="./assets/contacto.png" height="15px" alt=""> <small> Contactanos</small></a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#"><img src="./assets/facebook.png" height="15px" alt=""> <small> Facebook</small></a></li>
-        <li><a class="dropdown-item" href="#"><img src="./assets/whas.png" height="15px" alt=""> <small> WhatsApp</small></a></li>
-        <li><a class="dropdown-item" href="#"><img src="./assets/correo.png" height="15px"  alt=""> <small> Correo electronico</small></a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#"><img src="./assets/ubicacion.png" height="15px" alt=""> <small> Ubicacion</small></a></li>
-      </ul>
-    </li>
-    <li class="nav-item">
-      <a class="h6" class="nav-link" href="#" style="color: black;"><img src="./assets/empresa.png" height="20px" alt=""> <small> Empresas</small></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" style="color: black;"><img src="./assets/mision.png" height="20px" alt=""> <small> Mision Vision</small></a>
-    </li>
-  </ul>
-</div>
-</div>
 </div>
