@@ -1,0 +1,41 @@
+<div style="margin-top: 50px;" class="container-fluid py-4 d-flex justify-content-center align-items-center">
+    <form>
+      <div class="input-group mb-3">
+        <span><input type="text" [(ngModel)]="ruc" [ngModelOptions]="{standalone: true}" class="col-xs-4 rounded" style="width: 500px;" class="form-control" placeholder="Filtra por ruc" aria-label="Recipient's username" aria-describedby="basic-addon2"></span>
+        <div class="input-group-append">
+          <button class="btn btn-outline-primary" (click)="buscar()"  type="button">
+            <img src="./assets/lupa.png" height="15px" alt="">
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="table-responsive py-2">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#RUC</th>
+                <th>Razon social</th>
+                <th>Actividad comercial</th>
+                <th>estado_contribuyente</th>
+                <th>obligado</th>
+                <th>tipo_contribuyente</th>
+                <th>numero_establecimiento</th>
+                <th>Actividad comercial</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let ruc of personas.p_establecimientos">
+                <td>{{ ruc.numero_ruc }}</td>
+                <td>{{ ruc.razon_social }}</td>
+                <td>{{ ruc.actividad_economica }}</td>
+                <td>{{ruc.estado_contribuyente}}</td>
+                <td>{{ruc.obligado}}</td>
+                <td>{{ruc.tipo_contribuyente}}</td>
+                <td>{{ruc.numero_establecimiento}}</td>
+                <td>{{ruc.nombre_fantasia_comercial}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

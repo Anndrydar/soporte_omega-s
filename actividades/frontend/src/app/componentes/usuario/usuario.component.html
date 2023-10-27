@@ -1,0 +1,93 @@
+<style>    
+  .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .form-container {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      width: 80%;
+      max-width: 345px;
+      display: flex;
+  }
+  
+  h2 {
+      text-align: center;
+  }
+
+  .form-container, img{
+      text-align: center;
+  }
+  
+  form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+  
+  label {
+      font-weight: bold;
+      color: rgb(10, 10, 87);;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  .ab{
+      background-color: rgb(25, 25, 43);
+      text-decoration: none;
+      -webkit-text-fill-color: white;
+  }
+
+button{
+    background-color: rgb(25, 25, 43);
+    color: white;
+}
+
+a{
+    text-decoration-line: none;
+    color: rgb(28, 28, 67);
+}
+
+p{
+    color: rgb(25, 25, 43);
+}
+  
+  .register-link,
+  .login-link {
+      margin-top: 10px;
+      text-align: center;
+  }
+  
+  .hidden {
+      display: none;
+  }
+</style>
+<div class="container-fluid py-4">
+  <div class="form-container">
+          <img src="./assets/sesion.png"  height="50px"  />
+      <form class="login-form" >
+          <h2>Iniciar sesión</h2>
+          <input type="text" id="" name="" placeholder="correo electronico"
+          [(ngModel)]="sesiones.email" [ngModelOptions]="{standalone: true}"
+          required>
+          <input type="password" id="" name="" placeholder="contraseña"
+          [(ngModel)]="sesiones.password" [ngModelOptions]="{standalone: true}"
+          required>
+          <button (click)="iniciar()">Entrar</button>
+          <p class="register-link">¿No tienes cuenta? <a href="/cuenta" class="show-register">Regístrate</a></p>
+      </form>
+  </div>
+
+</div>

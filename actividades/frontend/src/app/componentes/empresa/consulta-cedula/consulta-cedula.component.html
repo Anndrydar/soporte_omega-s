@@ -1,0 +1,36 @@
+  <div style="margin-top: 50px;" class="container-fluid py-4 d-flex justify-content-center align-items-center">
+     <form>
+       <div class="input-group mb-3">
+         <span><input type="text" [(ngModel)]="cedula" [ngModelOptions]="{standalone: true}" style="width: 500px;" class="form-control" placeholder="Filtra por cedula" aria-label="Recipient's username" aria-describedby="basic-addon2"></span>
+         <div class="input-group-append">
+           <button class="btn btn-outline-primary" (click)="buscar()"  type="button">
+             <img src="./assets/lupa.png" height="15px" alt="">
+           </button>
+         </div>
+       </div>
+     </form>
+   </div>
+
+   <div class="table-responsive py-2">
+     <table class="table table-striped">
+         <thead>
+             <tr>
+                 <th>Cedula de identidad</th>
+                 <th>Nombres completos</th>
+                 <th>Fecha de nacimiento</th>
+                 <th>Nacionalidad</th>
+                 <th>Direccion</th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr *ngFor="let es of personas">
+                 <td>{{es.value.cedula}}</td>
+                 <td>{{es.value.persona}}</td>
+                 <td>{{es.value.f_nacimiento}}</td>
+                 <td>{{es.value.nacionalidad}}</td>
+                 <td>{{es.value.direccion}}</td>
+             </tr>
+         </tbody>
+     </table>
+ </div>
+ 
