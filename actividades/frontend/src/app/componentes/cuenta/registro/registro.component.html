@@ -1,39 +1,45 @@
-<style>    
+<style>
     .container {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: center; /* Centra verticalmente en la página */
+        height: 100vh;
     }
-    
+
     .form-container {
         background-color: rgba(255, 255, 255, 0.8);
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        width: 80%;
-        max-width: 340px;
+        width: 100%;
+        max-width: 500px;
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -100px; /* Ajusta el margen superior para mover la tarjeta hacia arriba */
     }
-    
+
     h2 {
         text-align: center;
         color: rgb(10, 10, 87);
     }
 
-    .form-container, img{
+    .form-container, img {
         text-align: center;
     }
-    
+
     form {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
         gap: 10px;
+        width: 100%;
     }
-    
+
     label {
-        color: rgb(10, 10, 87);;
+        color: rgb(10, 10, 87);
     }
-    
+
     input[type="text"],
     input[type="email"],
     input[type="password"] {
@@ -41,8 +47,9 @@
         border-radius: 5px;
         border: none;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+        width: calc(50% - 10px); /* Cambia el ancho al 50% */
     }
-    
+
     input[type="submit"] {
         background-color: rgb(25, 25, 43);
         color: white;
@@ -50,42 +57,44 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        width: 100%;
     }
-    
+
     input[type="submit"]:hover {
         background-color: rgb(25, 25, 43);
     }
-    
+
     .register-link,
     .login-link {
         margin-top: 10px;
         text-align: center;
     }
-    
+
     .hidden {
         display: none;
     }
 
-input{
-    height: 40px;
-}
-
+    input {
+        height: 40px;
+    }
 </style>
+
+
+
 <div class="container">
     <div class="form-container">
-            <img src="./assets/cuenta.png"  height="50px"  />
- <form class="login-form" [formGroup]="empresaForm" (ngSubmit)="crearEmpresa()">
-  <h2>create Account</h2>
-  <input placeholder="ruc" type="text" formControlName="ruc" required>
-  <input placeholder="correo electronico" type="text" formControlName="email" required>
-  <input placeholder="telefono" type="text" formControlName="telefono" required>
-  <input placeholder="direccion" type="text" formControlName="direccion" required>
-  <input placeholder="nombre de la empresa" type="text" formControlName="nombre_empresa"  required>
-  <input placeholder="nombre de contacto" type="text" formControlName="contacto" required>
-  <input placeholder="ciudad" type="text" formControlName="ciudad" required>
-  <input placeholder="contraseña" type="password" formControlName="password" required>
-  <input type="submit" value="Crear">
-</form>   
+        <img src="./assets/cuenta.png" height="50px" />
+        <form class="login-form" [formGroup]="empresaForm" (ngSubmit)="crearEmpresa()">
+            <h2>Create Account</h2>
+            <input placeholder="RUC" type="text" formControlName="ruc" required>
+            <input placeholder="Correo Electrónico" type="text" formControlName="email" required>
+            <input placeholder="Teléfono" type="text" formControlName="telefono" required>
+            <input placeholder="Dirección" type="text" formControlName="direccion" required>
+            <input placeholder="Nombre de la Empresa" type="text" formControlName="nombre_empresa" required>
+            <input placeholder="Nombre de Contacto" type="text" formControlName="contacto" required>
+            <input placeholder="Ciudad" type="text" formControlName="ciudad" required>
+            <input placeholder="Contraseña" type="password" formControlName="password" required>
+            <input type="submit" value="Crear">
+        </form>
     </div>
 </div>
-
