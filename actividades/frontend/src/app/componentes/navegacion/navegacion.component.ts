@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServicioEmpresaService } from 'src/app/servicios/servicio-empresa.service';
-import { ServicioTecnicoService } from 'src/app/servicios/servicio-tecnico.service';
-import { ServicioUsuarioService } from 'src/app/servicios/servicio-usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-navegacion',
@@ -34,6 +33,24 @@ verEmpresa(){
 
 exit(): void {
   localStorage.removeItem('tokens-omega');
+  this.success();
   this.router.navigate(['/login'])
 }
+
+
+
+success(){
+  Swal.fire({
+    position: 'top-end',
+    width: 400,
+    icon: 'success',
+    title: 'La sesion se cerro sastifactoriamente',
+    showConfirmButton: false,
+    timer: 1500
+  })
+}
+
+
+
+
 }

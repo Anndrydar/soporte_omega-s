@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServicioUsuarioService } from 'src/app/servicios/servicio-usuario.service';
+import Swal from 'sweetalert2';
+
+
 
 @Component({
   selector: 'app-usuario',
@@ -36,10 +39,10 @@ iniciar(){
       if(!res.error){
         localStorage.setItem('tokens-omega', res.token);
         console.log(res);
-        alert('Acceso correcto')
+        this.success();
         this.router.navigate(['/home']);
       }else{
-        alert('Acceso denegado')
+        this.error();
         console.log(res);
       }
     },
@@ -49,6 +52,27 @@ iniciar(){
   );
 }
 
+success(){
+  Swal.fire({
+    position: 'top-end',
+    width: 400,
+    icon: 'success',
+    title: 'Acceso permitido',
+    showConfirmButton: false,
+    timer: 1500
+  })
+}
 
+
+error(){
+  Swal.fire({
+    position: 'top-end',
+    width:400,
+    icon: 'error',
+    title: 'Acceso negado',
+    showConfirmButton: false,
+    timer: 1500
+  })
+}
 
 }

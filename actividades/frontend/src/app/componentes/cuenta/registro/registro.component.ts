@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServicioUsuarioService } from 'src/app/servicios/servicio-usuario.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -55,14 +55,41 @@ crearEmpresa() {
         console.log(res);
       }
     )
-    alert('Datos validos')
+    this.success();
     this.router.navigate(['/login']);
     console.log(this.empresaForm.value);
     
   }else{
-    alert('Formulario invalido')
+    this.error();
   }
 }
+
+
+
+success(){
+  Swal.fire({
+    position: 'top-end',
+    width: 400,
+    icon: 'success',
+    title: 'Cuenta creada sastifactoriamente',
+    showConfirmButton: false,
+    timer: 1500
+  })
+}
+
+
+error(){
+  Swal.fire({
+    position: 'top-end',
+    width:400,
+    icon: 'error',
+    title: 'Datos invalidos',
+    showConfirmButton: false,
+    timer: 1500
+  })
+}
+
+
 
 
 
