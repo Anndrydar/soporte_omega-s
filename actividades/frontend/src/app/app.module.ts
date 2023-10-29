@@ -13,6 +13,9 @@ import { ConsultaCedulaComponent } from './componentes/empresa/consulta-cedula/c
 import { RegistroComponent } from './componentes/cuenta/registro/registro.component';
 import { ConsultaRucComponent } from './componentes/empresa/consulta-ruc/consulta-ruc.component';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,

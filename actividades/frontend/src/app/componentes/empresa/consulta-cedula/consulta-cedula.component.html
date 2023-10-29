@@ -15,20 +15,20 @@
      <table class="table table-striped">
          <thead>
              <tr>
-                 <th>Cedula de identidad</th>
-                 <th>Nombres completos</th>
-                 <th>Fecha de nacimiento</th>
-                 <th>Nacionalidad</th>
-                 <th>Direccion</th>
+                 <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Cedula</th>
+                 <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Nombres</th>
+                 <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Fecha de nacimiento</th>
+                 <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Nacionalidad</th>
+                 <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Direccion</th>
              </tr>
          </thead>
          <tbody>
              <tr *ngFor="let es of personas">
-                 <td>{{es.value.cedula}}</td>
-                 <td>{{es.value.persona}}</td>
-                 <td>{{es.value.f_nacimiento}}</td>
-                 <td>{{es.value.nacionalidad}}</td>
-                 <td>{{es.value.direccion}}</td>
+                 <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{es.value.cedula}}</td>
+                 <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{es.value.persona}}</td>
+                 <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{es.value.f_nacimiento}}</td>
+                 <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{es.value.nacionalidad}}</td>
+                 <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{es.value.direccion}}</td>
              </tr>
          </tbody>
      </table>

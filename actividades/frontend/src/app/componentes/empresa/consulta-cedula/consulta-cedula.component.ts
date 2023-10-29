@@ -2,6 +2,7 @@ import { Component , OnInit} from '@angular/core';
 import { Consulta } from 'src/app/interfaces/empresa/consulta';
 import { ServicioEmpresaService } from 'src/app/servicios/servicio-empresa.service';
 
+
 @Component({
   selector: 'app-consulta-cedula',
   templateUrl: './consulta-cedula.component.html',
@@ -10,6 +11,7 @@ import { ServicioEmpresaService } from 'src/app/servicios/servicio-empresa.servi
 export class ConsultaCedulaComponent implements OnInit {
   personas: Consulta[] = [];
   cedula:String;
+
 
   constructor(
     private servicio: ServicioEmpresaService
