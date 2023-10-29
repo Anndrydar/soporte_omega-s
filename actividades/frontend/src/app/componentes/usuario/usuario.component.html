@@ -22,12 +22,13 @@
 
     .form-container img {
       max-width: 100%;
-      height: auto;
+      height: 50px;
       margin: 0 auto; /* Centra la imagen horizontalmente */
     }
 
     h2 {
       text-align: center;
+      color: rgb(10, 10, 87);
     }
 
     form {
@@ -74,10 +75,15 @@
     .login-link {
       margin-top: 10px;
     }
+
+
+    input {
+        height: 40px;
+    }
   </style>
   <div class="container-fluid">
     <div class="form-container">
-      <img src="./assets/sesion.png" alt="Sesión" height="20px" />
+      <img src="./assets/sesion.png" alt="Sesión"/>
       <form class="login-form">
         <h2>log in</h2>
         <input type="text" id="" name="" placeholder="correo electronico" [(ngModel)]="sesiones.email" [ngModelOptions]="{standalone: true}" required>
