@@ -19,7 +19,7 @@
         align-items: center;
            }
 
-    h2 {
+    h3 {
         text-align: center;
         color: rgb(10, 10, 87);
     }
@@ -39,11 +39,11 @@
     input[type="text"],
     input[type="email"],
     input[type="password"] {
-        padding: 10px;
-        border-radius: 5px;
+        padding: 10px 0;
         border: none;
-        box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
         width: calc(50% - 10px); /* Cambia el ancho al 50% */
+        outline: none;
+        border-bottom: 1px solid rgb(25, 25, 43);
     }
 
     input[type="submit"] {
@@ -53,7 +53,7 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        width: 100%;
+        width: 60%;
     }
 
     input[type="submit"]:hover {
@@ -72,15 +72,26 @@
 
     input {
         height: 40px;
+        font-size: small;
     }
 
 
-    .form-container img {
+    .form-container .imagen_arriba {
       max-width: 100%;
-      height: 80px;
-      margin: 0; /* Centra la imagen horizontalmente */
-      padding: 10px;
+      height: 50px;
+      margin: 0 auto;
     }
+
+
+  .input-group {
+  display: flex;
+  align-items: center;
+  border: none;
+}
+
+.input-icon {
+ height: 20px;
+}
 
 </style>
 
@@ -88,9 +99,9 @@
 
 <div class="container">
     <div class="form-container">
-        <img src="./assets/cuenta.png" height="50px" />
+        <img src="./assets/cuenta.png" class="imagen_arriba" />
         <form class="login-form" [formGroup]="empresaForm" (ngSubmit)="crearEmpresa()">
-            <h2>Create Account</h2>
+            <h3>Create Account</h3>
             <input placeholder="RUC" type="text" formControlName="ruc" required>
             <input placeholder="Correo Electrónico" type="text" formControlName="email" required>
             <input placeholder="Teléfono" type="text" formControlName="telefono" required>
