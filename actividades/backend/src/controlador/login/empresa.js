@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 
 const crearLogin = async(req,res)=>{
     const { email, password } = req.body;
-    const response = await p.query('SELECT * FROM empresa WHERE email = $1', 
+    const response = await p.query('SELECT * FROM copia WHERE email = $1', 
     [
         email
     ]);

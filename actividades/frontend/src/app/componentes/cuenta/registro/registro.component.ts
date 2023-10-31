@@ -55,7 +55,7 @@ crearEmpresa() {
         console.log(res);
       }
     )
-    this.success();
+    this.informacion();
     this.router.navigate(['/login']);
     console.log(this.empresaForm.value);
     
@@ -66,16 +66,17 @@ crearEmpresa() {
 
 
 
-success(){
+informacion(){
   Swal.fire({
     position: 'top-end',
     width: 400,
-    icon: 'success',
-    title: 'Cuenta creada sastifactoriamente',
+    icon: 'info',
+    title: 'Solo queda esperar que te acepten la cuenta',
     showConfirmButton: false,
     timer: 1500
   })
 }
+
 
 
 error(){
