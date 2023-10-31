@@ -37,7 +37,7 @@ export class RegistroComponent implements OnInit{
       ciudad: ['', Validators.compose([Validators.required, Validators.maxLength(60),
         Validators.minLength(3)])
     ],
-    password: ['', Validators.compose([Validators.required, Validators.maxLength(10),
+    password: ['', Validators.compose([Validators.required, Validators.maxLength(20),
       Validators.minLength(8)])
   ]
       });

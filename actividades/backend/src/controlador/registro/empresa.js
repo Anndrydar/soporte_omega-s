@@ -80,10 +80,19 @@ const crearSolicitud = async(req,res)=>{
             })
             }
 
+   
+            
+      getmpresas = async(req,res)=>{
+          const respuesta = await p.query('select * from empresa')
+          res.status(200).json(respuesta.rows)
+      }      
+
+
 
 module.exports = {
 crearCuenta,
 getSolicitudes,
 crearSolicitud,
-eliminarEmpresa
+eliminarEmpresa,
+getmpresas
 }
