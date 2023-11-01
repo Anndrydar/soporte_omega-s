@@ -110,6 +110,9 @@
             <input placeholder="Nombre de Contacto" type="text" formControlName="contacto" required>
             <input placeholder="Ciudad" type="text" formControlName="ciudad" required>
             <input placeholder="Contraseña" type="password" formControlName="password" required>
+            <div class="input-group">
+                <input type="file" formControlName="contrato" placeholder="PDF" (change)="onFileSelected($event)" accept=".pdf" required>
+            </div>
             <input type="submit" value="Crear">
         </form>
     </div>

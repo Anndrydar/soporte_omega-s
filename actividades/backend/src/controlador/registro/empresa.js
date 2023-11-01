@@ -3,29 +3,25 @@ const bcrypt = require('bcryptjs');
 
 
 
-const crearCuenta = async(req,res)=>{
-const {ruc,email,telefono,
-direccion,
-nombre_empresa,
-contacto,
-ciudad,
-password
-} = req.body;
-//const passencript = await bcrypt.hash(password,10);
-const guarda = await p.query('insert into empresa(ruc,email,telefono,direccion,nombre_empresa,contacto,ciudad,password)values($1,$2,$3,$4,$5,$6,$7,$8)',[
-    ruc,
-    email,
-    telefono,
-    direccion,
-    nombre_empresa,
-    contacto,
-    ciudad,
-    password
-])
-res.json({
-    message: 'Cliente creado sastifactoriamente'
-}) 
-}
+const crearCuenta = async (req, res) => {
+    const {
+      ruc, email, telefono, direccion, nombre_empresa, contacto, ciudad, password
+    } = req.body;
+  
+    const contrato = req.file; 
+    const contrato_binario = contrato.toString()
+  
+    const guarda = await p.query(
+      'INSERT INTO empresa (ruc, email, telefono, direccion, nombre_empresa, contacto, ciudad, password, contrato) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)',
+      [
+        ruc, email, telefono, direccion, nombre_empresa, contacto, ciudad, password, contrato_binario
+      ]
+    );
+  
+    res.json({
+      message: 'Cliente creado satisfactoriamente'
+    });
+  };
 
 
 
@@ -82,10 +78,18 @@ const crearSolicitud = async(req,res)=>{
 
    
             
-      getmpresas = async(req,res)=>{
-          const respuesta = await p.query('select * from empresa')
-          res.status(200).json(respuesta.rows)
-      }      
+     // Servidor Node.js
+getmpresas = async (req, res) => {
+    const respuesta = await p.query('select * from empresa');
+    const empresas = respuesta.rows.map(empresa => {
+      return {
+        ...empresa,
+        contrato: `/archivos/pdf/${empresa.contrato}.pdf`, // Ejemplo de ruta
+      };
+    });
+    res.status(200).json(respuesta.rows);
+  }
+       
 
 
 

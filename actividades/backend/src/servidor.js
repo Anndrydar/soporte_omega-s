@@ -4,6 +4,7 @@ const server = express()
 const port = process.env.port || 1000 
 server.use(express.json())
 server.use(express.urlencoded({extended: false}));
+server.use(express.static('archivos/pdf'));
 server.use(cors())
 server.use(express.static("./archivos"));
 server.use(require('../src/rutas/usuario'))

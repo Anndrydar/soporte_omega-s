@@ -6,5 +6,6 @@ export interface Empresa{
     nombre_empresa: String,
     contacto: String,
     ciudad: String,
-    password: String
+    password: String,
+    contrato: File
 }
