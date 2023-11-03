@@ -93,6 +93,12 @@
  height: 20px;
 }
 
+h6{
+    color: red;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: small;
+}
+
 </style>
 
 
@@ -103,15 +109,84 @@
         <form class="login-form" [formGroup]="empresaForm" (ngSubmit)="crearEmpresa()">
             <h3>Create Account</h3>
             <input placeholder="RUC" type="text" formControlName="ruc" required>
+            <div *ngIf="empresaForm.get('ruc').hasError('required') && empresaForm.get('ruc').touched">
+                <h6>RUC es requerido</h6>
+            </div>
+            <div *ngIf="empresaForm.get('ruc').hasError('minlength')">
+                <h6>RUC debe tener al menos 13 digitos</h6>
+            </div>
+            <div *ngIf="empresaForm.get('ruc').hasError('maxlength')">
+                <h6>RUC no debe tener más de 20 digitos</h6>
+            </div>
             <input placeholder="Correo Electrónico" type="text" formControlName="email" required>
+            <div *ngIf="empresaForm.get('email').hasError('required') && empresaForm.get('email').touched">
+                <h6>Email es requerido</h6>
+            </div>
+            <div *ngIf="empresaForm.get('email').hasError('pattern')">
+                <h6>Email invalido</h6>
+            </div>
             <input placeholder="Teléfono" type="text" formControlName="telefono" required>
+            <div *ngIf="empresaForm.get('telefono').hasError('required') && empresaForm.get('telefono').touched">
+                <h6>Telefono es requerido</h6>
+            </div>
+            <div *ngIf="empresaForm.get('telefono').hasError('minlength')">
+                <h6>Telefono debe tener al menos 10 digitos</h6>
+            </div>
+            <div *ngIf="empresaForm.get('telefono').hasError('maxlength')">
+                <h6>Telefono no debe tener más de 10 digitos</h6>
+            </div>
             <input placeholder="Dirección" type="text" formControlName="direccion" required>
+            <div *ngIf="empresaForm.get('direccion').hasError('required') && empresaForm.get('direccion').touched">
+                <h6>Direccion es requerida</h6>
+            </div>
+            <div *ngIf="empresaForm.get('direccion').hasError('minlength')">
+                <h6>Direccion debe tener al menos 10 caracteres</h6>
+            </div>
             <input placeholder="Nombre de la Empresa" type="text" formControlName="nombre_empresa" required>
+            <div *ngIf="empresaForm.get('nombre_empresa').hasError('required') && empresaForm.get('nombre_empresa').touched">
+                <h6>Nombre de la empresa es requerido</h6>
+            </div>
+            <div *ngIf="empresaForm.get('nombre_empresa').hasError('minlength')">
+                <h6>Nombre de la empresa  debe tener al menos 3 caracteres</h6>
+            </div>
+            <div *ngIf="empresaForm.get('nombre_empresa').hasError('maxlength')">
+                <h6>Nombre de la empresa no debe tener mas de 100 caracteres</h6>
+            </div>
             <input placeholder="Nombre de Contacto" type="text" formControlName="contacto" required>
+            <div *ngIf="empresaForm.get('contacto').hasError('required') && empresaForm.get('contacto').touched">
+                <h6>Nombre de algun contacto es requerido</h6>
+            </div>
+            <div *ngIf="empresaForm.get('contacto').hasError('minlength')">
+                <h6>Nombre de algun contacto debe tener al menos 3 caracteres</h6>
+            </div>
+            <div *ngIf="empresaForm.get('nombre_empresa').hasError('maxlength')">
+                <h6>Nombre de algun contacto no debe tener mas de 70 caracteres</h6>
+            </div>       
             <input placeholder="Ciudad" type="text" formControlName="ciudad" required>
+            <div *ngIf="empresaForm.get('ciudad').hasError('required') && empresaForm.get('ciudad').touched">
+                <h6>Ciudad es requerida</h6>
+            </div>
+            <div *ngIf="empresaForm.get('ciudad').hasError('minlength')">
+                <h6>Ciudad debe tener al menos 3 caracteres</h6>
+            </div>
+            <div *ngIf="empresaForm.get('ciudad').hasError('maxlength')">
+                <h6>Ciudad no debe tener mas de 60 caracteres</h6>
+            </div>
             <input placeholder="Contraseña" type="password" formControlName="password" required>
+            <div *ngIf="empresaForm.get('password').hasError('required') && empresaForm.get('password').touched">
+                <h6>Contraseña es requerida</h6>
+            </div>
+            <div *ngIf="empresaForm.get('password').hasError('minlength')">
+                <h6>Contraseña debe tener al menos 8 caracteres</h6>
+            </div>
+            <div *ngIf="empresaForm.get('password').hasError('maxlength')">
+                <h6>Contraseña no debe tener mas de 20 caracteres</h6>
+            </div>
             <div class="input-group">
                 <input type="file" formControlName="contrato" placeholder="PDF" (change)="onFileSelected($event)" accept=".pdf" required>
+                <div *ngIf="empresaForm.get('contrato').hasError('required') && empresaForm.get('contrato').touched">
+                    <h6>contrato debe ser subido en formato pdf y firmado electronicamente</h6>
+                </div>
             </div>
             <input type="submit" value="Crear">
         </form>

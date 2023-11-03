@@ -54,6 +54,7 @@ export class RegistroComponent implements OnInit{
 
 
 crearEmpresa() {
+  this.empresaForm.markAllAsTouched();
   if (this.empresaForm.valid && this.selectedFile) {
     const formData = new FormData();
     formData.append('ruc', this.empresaForm.get('ruc').value);
@@ -65,8 +66,8 @@ crearEmpresa() {
     formData.append('ciudad', this.empresaForm.get('ciudad').value);
     formData.append('password', this.empresaForm.get('password').value);
 
-    // Agregar el archivo PDF con un nombre de archivo
-    formData.append('contrato', this.selectedFile, 'nombre_archivo.pdf');
+    
+    formData.append('contrato', this.selectedFile, 'contrato.pdf');
 
     this.servicio.crearEmpresa(formData).subscribe(
       (response) => {
@@ -104,14 +105,11 @@ error(){
     position: 'top-end',
     width:400,
     icon: 'error',
-    title: 'Datos invalidos',
+    title: 'Datos incompletos',
     showConfirmButton: false,
     timer: 1500
   })
 }
-
-
-
 
 
 }

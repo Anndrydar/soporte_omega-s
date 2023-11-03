@@ -9,12 +9,12 @@ const crearCuenta = async (req, res) => {
     } = req.body;
   
     const contrato = req.file; 
-    const contrato_binario = contrato.toString()
+    const _contrato = contrato.filename;
   
     const guarda = await p.query(
       'INSERT INTO empresa (ruc, email, telefono, direccion, nombre_empresa, contacto, ciudad, password, contrato) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)',
       [
-        ruc, email, telefono, direccion, nombre_empresa, contacto, ciudad, password, contrato_binario
+        ruc, email, telefono, direccion, nombre_empresa, contacto, ciudad, password, _contrato
       ]
     );
   
@@ -78,17 +78,23 @@ const crearSolicitud = async(req,res)=>{
 
    
             
-     // Servidor Node.js
-getmpresas = async (req, res) => {
-    const respuesta = await p.query('select * from empresa');
-    const empresas = respuesta.rows.map(empresa => {
-      return {
-        ...empresa,
-        contrato: `/archivos/pdf/${empresa.contrato}.pdf`, // Ejemplo de ruta
-      };
-    });
-    res.status(200).json(respuesta.rows);
-  }
+ getmpresas = async (req, res) => {
+              try {
+                const respuesta = await p.query('SELECT * FROM empresa');
+                const empresas = respuesta.rows.map(empresa => {
+                  return {
+                    ...empresa,
+                    contrato: `archivos/pdf/${empresa.contrato}`
+                  };
+                });
+            
+                res.status(200).json(empresas);
+              } catch (error) {
+                console.error(error);
+                res.status(500).json({ error: 'Error al recuperar las empresas' });
+              }
+   };
+            
        
 
 

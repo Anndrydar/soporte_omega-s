@@ -13,15 +13,10 @@
             <li *ngFor="let so of social"><a class="dropdown-item" target="_blank" href="{{so.link}}"><img src="{{so.img}}" height="15px" alt=""> {{so.social}}</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="verMision()">
-           <img src="./assets/mision.png" height="20px" alt=""> Mision Vision
-          </a>
-        </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="./assets/empresa.png" height="20px" alt="">Mis productos</a>
+          <a class="nav-link dropdown-toggle"  style="color: rgb(25, 25, 43);" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="./assets/empresa.png" height="20px" alt="">Mis productos</a>
           <ul class="dropdown-menu">
-            <li *ngFor="let p of productos"><a class="dropdown-item" target="_blank" href="{{p.url}}">{{p.nombre}}</a></li>
+            <li *ngFor="let p of productos"><a  style="color: rgb(25, 25, 43);" class="dropdown-item" target="_blank" href="{{p.url}}">{{p.nombre}}</a></li>
           </ul>
         </li>
       </ul>
@@ -31,17 +26,17 @@
 
 
 
-<div class="sticky-top" style="top: 26px;  background-color: white;">
+<div class="sticky-top" style="top: 26px;">
   <div *ngFor="let em of empresa" class="container-fluid  d-flex justify-content-center align-items-center">
     <img src="{{em.imagen_home}}" width="300" height="250" class="img-fluid" alt="...">
   </div>
 
-  <div class="container-fluid py-4 d-flex justify-content-center align-items-center">
+  <div class="container-fluid d-flex justify-content-center align-items-center">
     <form>
       <div class="input-group mb-3">
         <span><input type="text" [(ngModel)]="descripcion" [ngModelOptions]="{standalone: true}" (keyup)="buscar()" class="col-xs-4 rounded" style="width: 500px;" class="form-control" placeholder="¿Qué servicios buscas?" aria-label="Recipient's username" aria-describedby="basic-addon2"></span>
         <div class="input-group-append">
-          <button class="btn btn-outline-primary" type="button">
+          <button class="btn btn-outline-primary" style="background-color: rgb(25, 25, 43);" type="button">
             <img src="./assets/lupa.png" height="15px" alt="">
           </button>
         </div>
@@ -51,13 +46,14 @@
 </div>
 
 <!-- Contenedor de los servicios -->
+<div class="table-wrapper-scroll-y my-custom-scrollbar py-2"  style="max-height: 200px; overflow-y: auto;">
 <div class="container-fluid">
   <div class="row my-4 text-center">
     <div *ngFor="let s of servicios" class="col-md-4 p-4">
-      <div class="card bg-light card-project shadow p-3 mb-5 bg-body rounded border-3">
+      <div class="card bg-light card-project shadow p-3 mb-5 bg-body rounded border-3  card-hover-effect" style="cursor: pointer">
         <div class="container-fluid py-2">
           <div class="card-body">
-            <h2 style="font-size: large; font-family: sans-serif; color: rgb(10, 10, 87);;">{{s.descripcion}}</h2>
+            <h2 style="font-size: large; font-family: sans-serif; color: rgb(10, 10, 87);">{{s.descripcion}}</h2>
             <p style="font-size: small; font-family: sans-serif; color: rgb(4, 4, 73);">Duración de mantenimiento {{s.duracion}}</p>
           </div>
         </div>
@@ -65,3 +61,11 @@
     </div>
   </div>
 </div>
+</div>
+
+<style>
+  .card-hover-effect:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+</style>
