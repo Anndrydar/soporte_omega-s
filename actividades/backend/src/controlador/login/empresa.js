@@ -37,7 +37,20 @@ function token(response){
 }
 
 
+// Obtener el usuario autenticado
+const getUsuario = async (req, res) => {
+  const { email } = req;
+  if (!email) {
+    return res.status(404).json({ error: 'Usuario no ha iniciado sesión' });
+  }
+  res.json({
+    usuario: usuario
+  });
+};
+
+
 
 module.exports = {
-    crearLogin
+    crearLogin,
+    getUsuario
 }

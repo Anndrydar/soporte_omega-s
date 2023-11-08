@@ -1,4 +1,6 @@
 const {p} = require('../../db/conexionLogin')
+const path = require('path');
+const fs = require('fs')
 const bcrypt = require('bcryptjs');
 
 
@@ -76,25 +78,29 @@ const crearSolicitud = async(req,res)=>{
             })
             }
 
-   
-            
- getmpresas = async (req, res) => {
+            const obtenerTodosLosDatosEmpresa = async (req, res) => {
               try {
-                const respuesta = await p.query('SELECT * FROM empresa');
-                const empresas = respuesta.rows.map(empresa => {
-                  return {
-                    ...empresa,
-                    contrato: `archivos/pdf/${empresa.contrato}`
-                  };
-                });
+                // Consulta todos los campos de la tabla empresa
+                const datosEmpresa = await p.query('SELECT * FROM empresa');
             
-                res.status(200).json(empresas);
+                if (datosEmpresa.rows.length === 0) {
+                  return res.status(404).json({ message: 'No se encontraron datos de empresas.' });
+                }
+            
+                res.json({ empresa: datosEmpresa.rows });
               } catch (error) {
                 console.error(error);
-                res.status(500).json({ error: 'Error al recuperar las empresas' });
+                res.status(500).json({ message: 'Error al obtener los datos de la empresa.' });
               }
-   };
+            };
             
+            
+            
+            
+           const ver = async(req,res)=> {
+            const datosEmpresa = await p.query('SELECT * FROM empresa');
+            res.status(200).json(datosEmpresa.rows)
+            }
        
 
 
@@ -104,5 +110,6 @@ crearCuenta,
 getSolicitudes,
 crearSolicitud,
 eliminarEmpresa,
-getmpresas
+obtenerTodosLosDatosEmpresa,
+ver
 }

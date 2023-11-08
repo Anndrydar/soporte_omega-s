@@ -1,0 +1,58 @@
+<div style="margin-top: 50px;" class="container-fluid py-4 d-flex justify-content-center align-items-center">
+    <form>
+      <div class="input-group mb-3">
+        <span><input type="text" [(ngModel)]="nombre_empresa" [ngModelOptions]="{standalone: true}" style="width: 500px;" (keyup)="buscarPorNombre()" class="form-control" placeholder="Acepta empresas por su nombre" aria-label="Recipient's username" aria-describedby="basic-addon2"></span>
+        <div class="input-group-append">
+          <button class="btn btn-outline-primary" style="background-color:rgb(25, 25, 43);" (click)="buscarPorNombre()"  type="button">
+            <img src="./assets/lupa.png" height="15px" alt="">
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
+
+
+  <div class="table-wrapper-scroll-y my-custom-scrollbar py-2"  style="max-height: 200px; overflow-y: auto;">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Ruc</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Email</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Telefono</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Direccion</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Empresa</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Contacto</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Ciudad</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Contrato</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Aceptar</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Rechazar</th>
+        </tr>
+      </thead>  
+      <tbody>
+        <tr *ngFor="let so of solicitudes">
+          <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.ruc}}</td>
+          <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.email}}</td>
+          <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.telefono}}</td>
+          <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.direccion}}</td>
+          <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.nombre_empresa}}</td>
+          <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.contacto}}</td>
+          <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.ciudad}}</td>
+          <td>
+            <a [href]="so.contrato" target="_blank">Ver contrato</a>
+          </td>
+          <td style="text-align: center; color: green;"><a (click)=
+            "aceptacion(so.idempresa,so.ruc,so.email,so.telefono, 
+            so.direccion,so.nombre_empresa,so.contacto,so.fecha_ingreso,so.ciudad,
+            so.password)" class="btn">
+            <img src="./assets/accept.png" height="18px" alt="">
+          </a></td>
+          <td style="text-align: center; color: red;"><a (click)="rechazo(so.idempresa)" class="btn">
+            <img src="./assets/decline.png" height="20px" alt="" >
+          </a></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
