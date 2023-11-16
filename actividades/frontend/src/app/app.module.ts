@@ -12,7 +12,7 @@ import { ActualInfoComponent } from './componentes/empresa/actual-info/actual-in
 import { ConsultaCedulaComponent } from './componentes/empresa/consulta-cedula/consulta-cedula.component';
 import { RegistroComponent } from './componentes/cuenta/registro/registro.component';
 import { ConsultaRucComponent } from './componentes/empresa/consulta-ruc/consulta-ruc.component';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -33,7 +33,8 @@ import { ConsultaRucComponent } from './componentes/empresa/consulta-ruc/consult
     HttpClientModule,
     FormsModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

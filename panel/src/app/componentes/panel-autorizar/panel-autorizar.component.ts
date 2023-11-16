@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./panel-autorizar.component.css']
 })
 export class PanelAutorizarComponent implements OnInit {
+  p: number = 1;
   solicitudes: any;  
   nombre_empresa = '';
 

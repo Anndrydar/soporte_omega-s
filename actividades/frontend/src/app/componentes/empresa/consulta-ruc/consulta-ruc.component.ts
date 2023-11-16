@@ -7,7 +7,7 @@ import { ServicioEmpresaService } from 'src/app/servicios/servicio-empresa.servi
   styleUrls: ['./consulta-ruc.component.css']
 })
 export class ConsultaRucComponent implements OnInit {
-
+p: number = 1;
 personas: any= [];
 ruc:String;
 

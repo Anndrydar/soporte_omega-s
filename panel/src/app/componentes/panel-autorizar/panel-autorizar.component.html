@@ -32,7 +32,7 @@
         </tr>
       </thead>  
       <tbody>
-        <tr *ngFor="let so of solicitudes">
+        <tr *ngFor="let so of solicitudes | paginate: { itemsPerPage: 10, currentPage: p }">
           <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.ruc}}</td>
           <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.email}}</td>
           <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.telefono}}</td>
@@ -55,4 +55,7 @@
         </tr>
       </tbody>
     </table>
+</div>
+<div class="container-fluid py-2 d-flex justify-content-center">
+  <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"  nextLabel="Siguiente"></pagination-controls>
 </div>

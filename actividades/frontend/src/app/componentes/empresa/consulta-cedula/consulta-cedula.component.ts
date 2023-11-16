@@ -11,6 +11,8 @@ import { ServicioEmpresaService } from 'src/app/servicios/servicio-empresa.servi
 export class ConsultaCedulaComponent implements OnInit {
   personas: Consulta[] = [];
   cedula:String;
+  p: number = 1;
+  index: number = 1;
 
 
   constructor(
