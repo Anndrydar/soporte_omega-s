@@ -1,5 +1,4 @@
 const {pool} = require('../db/conexion')
-const {} = require('../db/conexionSybase')
 
 
 const crearEmpresa = async(req,res)=>{
