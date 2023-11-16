@@ -1,4 +1,5 @@
 const {pool} = require('../db/conexion')
+const {} = require('../db/conexionSybase')
 
 
 const crearEmpresa = async(req,res)=>{
@@ -48,7 +49,6 @@ const respuesta = await
 pool.query('select e.nombre, e.url from nombres_empresa n join enlaces e on  n.idname = e.idname')
 res.status(200).json(respuesta.rows);
 }
-
 
 
 
