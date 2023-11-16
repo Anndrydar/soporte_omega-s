@@ -8,3 +8,7 @@ const sy = new Sybase(
     'username',
     'pw'
 )
+
+module.export = {
+    sy
+}
