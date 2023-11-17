@@ -116,3 +116,34 @@ values('Cambio de pasta termica en el procesador',15.00,'1 hora');
 
 
 
+--Creacion de tabla empresa como sala de espera
+create table empresa(
+idEmpresa serial primary key,
+ruc varchar(20) unique,
+email text unique,
+telefono varchar(10),
+direccion text,
+nombre_empresa text,
+contacto text,
+fecha_ingreso timestamp default current_timestamp,
+ciudad text,
+password text,
+plan text
+);
+
+
+--Creacion de tabla copia 
+create table copia(
+idEmpresa serial primary key,
+ruc varchar(20) unique,
+email text unique,
+telefono varchar(10),
+direccion text,
+nombre_empresa text,
+contacto text,
+fecha_ingreso timestamp default current_timestamp,
+ciudad text,
+password text,
+plan text
+);
+
