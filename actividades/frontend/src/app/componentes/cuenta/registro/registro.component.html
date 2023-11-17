@@ -182,11 +182,9 @@ h6{
             <div *ngIf="empresaForm.get('password').hasError('maxlength')">
                 <h6>Contraseña no debe tener mas de 20 caracteres</h6>
             </div>
-            <div class="input-group">
-                <input type="file" formControlName="contrato" placeholder="PDF" (change)="onFileSelected($event)" accept=".pdf" required>
-                <div *ngIf="empresaForm.get('contrato').hasError('required') && empresaForm.get('contrato').touched">
-                    <h6>contrato debe ser subido en formato pdf y firmado electronicamente</h6>
-                </div>
+            <input placeholder="plan" type="text" formControlName="plan" required>
+            <div *ngIf="empresaForm.get('plan').hasError('required') && empresaForm.get('plan').touched">
+                <h6>Plan es requerido</h6>
             </div>
             <input type="submit" value="¡Suscribirme!">
         </form>

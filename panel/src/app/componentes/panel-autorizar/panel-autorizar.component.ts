@@ -24,7 +24,8 @@ export class PanelAutorizarComponent implements OnInit {
     contacto: '',
     fecha_ingreso: '',
     ciudad: '',
-    password: ''
+    password: '',
+    plan: ''
   }
 
 constructor(private servicio: ServicioAutorizarService
@@ -53,7 +54,7 @@ verEmpresas(){
 aceptacion(idempresa: Number,
   ruc: String, email: String, telefono: String, direccion: String,
   nombre_empresa: String, contacto: String, fecha_ingreso: String, ciudad: String,
-  password: String){
+  password: String, plan: String){
 
 let acepta = this.empresa = {
   ruc: ruc,
@@ -64,7 +65,8 @@ let acepta = this.empresa = {
   contacto: contacto,
   fecha_ingreso: fecha_ingreso,
   ciudad: ciudad,
-  password: password
+  password: password,
+  plan: plan
 }
 this.servicio.crearSolicitud(acepta).subscribe(
   res=>{

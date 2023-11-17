@@ -1,15 +1,18 @@
 var Sybase = require('sybase'),
-    db = new Sybase('host', port, 'dbName', 'username', 'pw');
+    db = new Sybase('localhost', 2638, 'Datos3', 'dba', 'ALFA2018');
 
-    db.connect(function (err) {
+
+    const verReport = async(req,res)=>{
+      db.connect(function (err) {
         if (err) return console.log(err);
-      
-        db.query('select * from user where user_id = 42', function (err, data) {
+        db.query('select * from sys_periodo', function (err, data) {
           if (err) console.log(err);
-      
-          console.log(data);
-      
-          db.disconnect();
-      
+          res.status(200).json(data)
         });
-      });
+      });    
+    }
+
+
+    module.exports = {
+      verReport
+    }

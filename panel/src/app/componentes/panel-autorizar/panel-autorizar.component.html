@@ -26,7 +26,8 @@
           <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Empresa</th>
           <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Contacto</th>
           <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Ciudad</th>
-          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Contrato</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Fecha de ingreso</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Plan</th>
           <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Aceptar</th>
           <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Rechazar</th>
         </tr>
@@ -40,13 +41,12 @@
           <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.nombre_empresa}}</td>
           <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.contacto}}</td>
           <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.ciudad}}</td>
-          <td>
-            <a [href]="so.contrato" target="_blank">Ver contrato</a>
-          </td>
+          <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.fecha_ingreso}}</td>
+          <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.plan}}</td>
           <td style="text-align: center; color: green;"><a (click)=
             "aceptacion(so.idempresa,so.ruc,so.email,so.telefono, 
             so.direccion,so.nombre_empresa,so.contacto,so.fecha_ingreso,so.ciudad,
-            so.password)" class="btn">
+            so.password, so.plan)" class="btn">
             <img src="./assets/accept.png" height="18px" alt="">
           </a></td>
           <td style="text-align: center; color: red;"><a (click)="rechazo(so.idempresa)" class="btn">

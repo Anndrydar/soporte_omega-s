@@ -14,11 +14,6 @@ export class RegistroComponent implements OnInit{
 
   empresaForm: FormGroup;
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  selectedFile: File;
-
-  onFileSelected(event: any) {
-    this.selectedFile = event.target.files[0];
-  }
 
   constructor(private servicio: ServicioUsuarioService,
      private router: Router,
@@ -44,7 +39,7 @@ export class RegistroComponent implements OnInit{
     password: ['', Validators.compose([Validators.required, Validators.maxLength(20),
       Validators.minLength(8)])
   ],
-  contrato: [null, Validators.required],
+  plan: [null, Validators.required],
       });
   }
 
@@ -53,35 +48,18 @@ export class RegistroComponent implements OnInit{
 }
 
 
-crearEmpresa() {
+crearEmpresa(){
   this.empresaForm.markAllAsTouched();
-  if (this.empresaForm.valid && this.selectedFile) {
-    const formData = new FormData();
-    formData.append('ruc', this.empresaForm.get('ruc').value);
-    formData.append('email', this.empresaForm.get('email').value);
-    formData.append('telefono', this.empresaForm.get('telefono').value);
-    formData.append('direccion', this.empresaForm.get('direccion').value);
-    formData.append('nombre_empresa', this.empresaForm.get('nombre_empresa').value);
-    formData.append('contacto', this.empresaForm.get('contacto').value);
-    formData.append('ciudad', this.empresaForm.get('ciudad').value);
-    formData.append('password', this.empresaForm.get('password').value);
-
-    
-    formData.append('contrato', this.selectedFile, 'contrato.pdf');
-
-    this.servicio.crearEmpresa(formData).subscribe(
-      (response) => {
-        console.log(response);
-        this.informacion();
-        this.router.navigate(['/login']);
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  } else {
-    this.error();
-  }
+  if(this.empresaForm.valid){
+    this.servicio.crearEmpresa(this.empresaForm.value).subscribe(
+     res => {
+      this.router.navigate(['/login'])
+     }
+    )
+    this.informacion()
+   }else{
+     this.error()
+   }
 }
 
 

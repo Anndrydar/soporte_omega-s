@@ -1,4 +1,4 @@
-const {p} = require('../../db/conexionLogin')
+const {pool} = require('../../db/conexion')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 
 const crearLogin = async(req,res)=>{
     const { email, password } = req.body;
-    const response = await p.query('SELECT * FROM copia WHERE email = $1', 
+    const response = await pool.query('SELECT * FROM copia WHERE email = $1', 
     [
         email
     ]);

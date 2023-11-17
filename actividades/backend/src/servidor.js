@@ -15,6 +15,7 @@ server.use(require('../src/rutas/empresa'))
 server.use(require('../src/rutas/informacion'))
 server.use(require('../src/rutas/registro/empresa'))
 server.use(require('../src/rutas/login/empresa'))
+server.use(require('../src/rutas/reportes/empresa'))
 
 
 //ver pdf
