@@ -162,7 +162,7 @@ h6{
             <div *ngIf="empresaForm.get('nombre_empresa').hasError('maxlength')">
                 <h6>Nombre de algun contacto no debe tener mas de 70 caracteres</h6>
             </div>       
-            <input placeholder="Ciudad" type="text" formControlName="ciudad" required>
+            <input placeholder="Ciudad" type="text" formControlName="ciudad"  required>
             <div *ngIf="empresaForm.get('ciudad').hasError('required') && empresaForm.get('ciudad').touched">
                 <h6>Ciudad es requerida</h6>
             </div>
@@ -182,11 +182,16 @@ h6{
             <div *ngIf="empresaForm.get('password').hasError('maxlength')">
                 <h6>Contraseña no debe tener mas de 20 caracteres</h6>
             </div>
-            <input placeholder="plan" type="text" formControlName="plan" required>
-            <div *ngIf="empresaForm.get('plan').hasError('required') && empresaForm.get('plan').touched">
+            <div class="form-group">
+                <select class="form-select form-select-sm" formControlName="idplan">
+                    <option value="">Seleccione plan</option>
+                     <option *ngFor="let p of planes" value="{{p.idplan}}">{{p.descripcion}}</option>
+                   </select>
+            </div>
+            <div *ngIf="empresaForm.get('idplan').hasError('required') && empresaForm.get('idplan').touched">
                 <h6>Plan es requerido</h6>
             </div>
-            <input type="submit" value="¡Suscribirme!">
+            <input type="submit" value="¡Suscribirme!" >
         </form>
     </div>
 </div>

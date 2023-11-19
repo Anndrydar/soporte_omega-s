@@ -23,4 +23,9 @@ crearEmpresa(formData: FormData) {
   return this.http.post(this.API + '/registro/', formData);
 }
 
+
+verplanes(){
+  return this.http.get(this.API + '/planes')
+}
+
 }

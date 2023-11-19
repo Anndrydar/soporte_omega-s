@@ -6,14 +6,14 @@ const bcrypt = require('bcryptjs');
 const crearCuenta = async (req, res) => {
     const {
       ruc, email, telefono, direccion, nombre_empresa, contacto, ciudad, password, 
-      plan
+      idplan
     } = req.body;
 
   
     const guarda = await pool.query(
-      'INSERT INTO empresa (ruc, email, telefono, direccion, nombre_empresa, contacto, ciudad, password, plan) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)',
+      'INSERT INTO empresa (ruc, email, telefono, direccion, nombre_empresa, contacto, ciudad, password, idplan) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)',
       [
-        ruc, email, telefono, direccion, nombre_empresa, contacto, ciudad, password, plan
+        ruc, email, telefono, direccion, nombre_empresa, contacto, ciudad, password, idplan
       ]
     );
   
@@ -26,7 +26,7 @@ const crearCuenta = async (req, res) => {
 
 getSolicitudes = async(req,res)=>{
 const nombre_empresa = req.params.nombre_empresa; 
-const respuesta = await pool.query('select * from empresa where nombre_empresa like $1',[
+const respuesta = await pool.query('SELECT * FROM planes p join empresa e on p.idplan = e.idplan where nombre_empresa like $1',[
     nombre_empresa + '%'
 ])
 res.status(200).json(respuesta.rows);
@@ -41,10 +41,10 @@ const crearSolicitud = async(req,res)=>{
     fecha_ingreso,
     ciudad,
     password,
-    plan
+    idplan
     } = req.body;
     const passencript = await bcrypt.hash(password,10);
-    const guarda = await pool.query('insert into copia(ruc,email,telefono,direccion,nombre_empresa,contacto,fecha_ingreso,ciudad,password,plan)values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)',[
+    const guarda = await pool.query('insert into copia(ruc,email,telefono,direccion,nombre_empresa,contacto,fecha_ingreso,ciudad,password,idplan)values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)',[
         ruc,
         email,
         telefono,
@@ -54,7 +54,7 @@ const crearSolicitud = async(req,res)=>{
         fecha_ingreso,
         ciudad,
         passencript,
-        plan
+        idplan
     ])
     res.json({
         message: 'Cliente aceptado'
@@ -81,7 +81,7 @@ const crearSolicitud = async(req,res)=>{
             
             
            const ver = async(req,res)=> {
-            const datosEmpresa = await pool.query('SELECT * FROM empresa');
+            const datosEmpresa = await pool.query('SELECT * FROM planes p join empresa e on p.idplan = e.idplan');
             res.status(200).json(datosEmpresa.rows)
             }
        

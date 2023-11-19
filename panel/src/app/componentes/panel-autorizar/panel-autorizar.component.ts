@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Empresa } from 'src/app/interfaces/empresa';
 import { ServicioAutorizarService } from 'src/app/servicios/servicio-autorizar.service';
 import Swal from 'sweetalert2';
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 
 @Component({
@@ -13,6 +16,7 @@ export class PanelAutorizarComponent implements OnInit {
   p: number = 1;
   solicitudes: any;  
   nombre_empresa = '';
+  nombre: String = 'Anndry';
 
 
   empresa: Empresa = {
@@ -25,7 +29,7 @@ export class PanelAutorizarComponent implements OnInit {
     fecha_ingreso: '',
     ciudad: '',
     password: '',
-    plan: ''
+    idplan: 0
   }
 
 constructor(private servicio: ServicioAutorizarService
@@ -54,7 +58,7 @@ verEmpresas(){
 aceptacion(idempresa: Number,
   ruc: String, email: String, telefono: String, direccion: String,
   nombre_empresa: String, contacto: String, fecha_ingreso: String, ciudad: String,
-  password: String, plan: String){
+  password: String, plan: Number){
 
 let acepta = this.empresa = {
   ruc: ruc,
@@ -66,7 +70,7 @@ let acepta = this.empresa = {
   fecha_ingreso: fecha_ingreso,
   ciudad: ciudad,
   password: password,
-  plan: plan
+  idplan: plan
 }
 this.servicio.crearSolicitud(acepta).subscribe(
   res=>{
@@ -113,6 +117,37 @@ advertencia(){
 }
 
 
+
+exportarpdf(ruc: String,descripcion:String,
+  email: String, telefono: String, direccion: String,
+  nombre_empresa: String, contacto: String, 
+  fecha_ingreso: String, ciudad: String){
+ 
+  const pdfDocu: any = {
+    content: [
+      {
+        text:[
+          {
+            text: ruc + ' '
+          },
+          {
+            text: descripcion + ' '
+          },
+          {
+            text: email + ' '
+          },
+          {
+            text:nombre_empresa + ' '
+          }
+        ]
+      }
+    ]
+  }
+
+  const documento = pdfMake.createPdf(pdfDocu);
+  documento.open();
+
+}
 
 
 }

@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServicioUsuarioService } from 'src/app/servicios/servicio-usuario.service';
 import Swal from 'sweetalert2';
+
+
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -10,8 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class RegistroComponent implements OnInit{
 
-
-
+  planes: any;
   empresaForm: FormGroup;
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -19,6 +21,7 @@ export class RegistroComponent implements OnInit{
      private router: Router,
     private formBuilder: FormBuilder){
       this.empresaForm = this.formBuilder.group({
+        idplan: ['',Validators.required],
         ruc: ['',Validators.compose([Validators.required, Validators.minLength(13)
           , Validators.maxLength(20)])],
         email: ['', Validators.compose([Validators.required,Validators.pattern(this.emailPattern)])],
@@ -39,12 +42,11 @@ export class RegistroComponent implements OnInit{
     password: ['', Validators.compose([Validators.required, Validators.maxLength(20),
       Validators.minLength(8)])
   ],
-  plan: [null, Validators.required],
       });
   }
 
    ngOnInit(): void {
-  
+  this.verplanes()
 }
 
 
@@ -61,6 +63,8 @@ crearEmpresa(){
      this.error()
    }
 }
+
+
 
 
 
@@ -89,5 +93,13 @@ error(){
   })
 }
 
+
+verplanes(){
+  this.servicio.verplanes().subscribe(
+    res=>{
+       this.planes = res;
+    }
+  )
+}
 
 }

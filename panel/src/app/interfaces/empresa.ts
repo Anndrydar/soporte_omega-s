@@ -9,5 +9,5 @@ export interface Empresa{
     fecha_ingreso: String;
     ciudad: String;
     password: String;
-    plan: String;
+    idplan: Number;
 }

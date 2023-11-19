@@ -7,5 +7,5 @@ export interface Empresa{
     contacto: String,
     ciudad: String,
     password: String,
-    contrato: File
+    idplan: Number
 }
