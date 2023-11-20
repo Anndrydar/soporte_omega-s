@@ -125,22 +125,8 @@ exportarpdf(ruc: String,descripcion:String,
  
   const pdfDocu: any = {
     content: [
-      {
-        text:[
-          {
-            text: ruc + ' '
-          },
-          {
-            text: descripcion + ' '
-          },
-          {
-            text: email + ' '
-          },
-          {
-            text:nombre_empresa + ' '
-          }
-        ]
-      }
+      
+ 
     ]
   }
 
