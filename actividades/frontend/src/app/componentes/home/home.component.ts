@@ -15,6 +15,7 @@ export class HomeComponent  implements OnInit{
   descripcion: String;
   social: any;
   mis: any;
+  msm: any;
 
   
   constructor(private servicio:ServicioTecnicoService,
@@ -84,5 +85,16 @@ verEnlaces(){
   )
 }
 
+enviarmensaje(telefono: String,descripcion: string, msm: string){
+  const numero_original = '+593' + telefono
+  const cuerpo = 'Servicio: ' + descripcion + '. ' + msm
+  const enlace = 'https://wa.me/' + numero_original + '?text=' + encodeURIComponent(cuerpo)
+  window.open(enlace,"_blank")
+}
+
+
+toggleDetails(index: number): void {
+  this.servicios[index].showDetails = !this.servicios[index].showDetails;
+}
 
 }

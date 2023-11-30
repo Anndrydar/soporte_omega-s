@@ -60,6 +60,7 @@ aceptacion(idempresa: Number,
   nombre_empresa: String, contacto: String, fecha_ingreso: String, ciudad: String,
   password: String, plan: Number){
 
+
 let acepta = this.empresa = {
   ruc: ruc,
   email: email,
@@ -70,7 +71,7 @@ let acepta = this.empresa = {
   fecha_ingreso: fecha_ingreso,
   ciudad: ciudad,
   password: password,
-  idplan: plan
+  idplan:Number(plan),
 }
 this.servicio.crearSolicitud(acepta).subscribe(
   res=>{
@@ -98,7 +99,7 @@ success(){
     position: 'top-end',
     width: 400,
     icon: 'success',
-    title: 'Empresa aceptada',
+    title: 'Empresa aceptada bien',
     showConfirmButton: false,
     timer: 1500
   })

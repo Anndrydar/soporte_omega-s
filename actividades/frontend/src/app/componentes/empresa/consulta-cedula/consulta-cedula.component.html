@@ -20,8 +20,10 @@
                  <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Nombres</th>
                  <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Fecha de nacimiento</th>
                  <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Nacionalidad</th>
-                 <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Direccion</th>
+                 <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;;">Direccion</th>
              </tr>
+
+
          </thead>
          <tbody>
              <tr *ngFor="let es of personas | paginate: { itemsPerPage: 10, currentPage: p }">

@@ -45,27 +45,59 @@
   </div>
 </div>
 
+
+
+
 <!-- Contenedor de los servicios -->
-<div class="table-wrapper-scroll-y my-custom-scrollbar py-2"  style="max-height: 200px; overflow-y: auto;">
-<div class="container-fluid">
-  <div class="row my-4 text-center">
-    <div *ngFor="let s of servicios" class="col-md-4 p-4">
-      <div class="card bg-light card-project shadow p-3 mb-5 bg-body rounded border-3  card-hover-effect" style="cursor: pointer">
-        <div class="container-fluid py-2">
-          <div class="card-body">
-            <h2 style="font-size: large; font-family: sans-serif; color: rgb(10, 10, 87);">{{s.descripcion}}</h2>
-            <p style="font-size: small; font-family: sans-serif; color: rgb(4, 4, 73);">Duración de mantenimiento {{s.duracion}}</p>
+<div class="table-wrapper-scroll-y my-custom-scrollbar py-2" style="max-height: 200px; overflow-y: auto;">
+  <div class="container-fluid">
+    <div class="row my-4 text-center">
+      <div *ngFor="let s of servicios; let i = index" class="col-md-10 " style="background-color: #54a5c6;">
+        <div class="card bg-light card-project shadow p-2 mb-3 bg-body rounded border-2 card-hover-effect" style="cursor: pointer; border-color: #87CEEB; position: relative; z-index: 1;border-radius: 20px;">
+          <div class="container-fluid py-2">
+            <div class="card-body">
+              <!-- Descripción del servicio -->
+              <button (click)="toggleDetails(i)" class="service-button btn btn-block rounded-pill">{{s.descripcion}}</button>
+
+              <!-- Detalles flotantes -->
+              <div *ngIf="s.showDetails" class="details-overlay show-details">
+                <p class="detail-text">Duración de mantenimiento {{s.duracion}}</p>
+                <p class="detail-text">Precio {{s.precio}}$</p>
+                <p class="detail-text">Técnico encargado {{s.nombres}}</p>
+                <p class="detail-text">Ciudad {{s.ciudad}}</p>
+                <div class="mt-2">
+                  <textarea class="form-control" placeholder="Escribe tu mensaje al técnico..." rows="2" [(ngModel)]="s.msm" required style="background-color: #FFFFFF;"></textarea>
+                  <button class="btn mt-2" (click)="enviarmensaje(s.telefono, s.descripcion, s.msm)">
+                    <img src="./assets/send-message.png" height="18px" alt="">
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-</div>
 
 <style>
   .card-hover-effect:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease-in-out;
-}
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .table-wrapper-scroll-y {
+    max-height: 200px;
+    overflow-y: auto !important;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent !important; /* Para navegadores basados en Firefox */
+  }
+
+  .table-wrapper-scroll-y::-webkit-scrollbar {
+    width: 12px; /* Para navegadores basados en WebKit (Chrome, Safari, etc.) */
+  }
+
+  .table-wrapper-scroll-y::-webkit-scrollbar-thumb {
+    background-color: transparent !important; /* Color transparente para la barra de desplazamiento */
+  }
 </style>

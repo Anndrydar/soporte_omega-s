@@ -13,7 +13,7 @@ server.use(require('../src/rutas/registro/empresa'))
 server.use(require('../src/rutas/login/empresa'))
 server.use(require('../src/rutas/reportes/empresa'))
 server.use(require('../src/rutas/plan/plan'))
-
+server.use(require('../src/rutas/tecnico/tecnico'))
 
 
 server.listen(port)
