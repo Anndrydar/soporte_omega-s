@@ -30,6 +30,7 @@ export class PanelCrearServiciosComponent implements OnInit {
   ngOnInit(): void {
     this.vercategorias();
     this.vertecnicos();
+    this.verservicios();
 }
 
 
@@ -54,7 +55,7 @@ crearservicio(){
   if(this.servicioForm.valid){
     this.service.crearservicio(this.servicioForm.value).subscribe(
      res => {
-         
+         this.verservicios()
      }
     )
     this.informacion()
@@ -64,6 +65,13 @@ crearservicio(){
 }
 
 
+verservicios(){
+  this.service.verservicios().subscribe(
+    res=>{
+      this.servicios = res
+    }
+  )
+}
 
 informacion(){
   Swal.fire({

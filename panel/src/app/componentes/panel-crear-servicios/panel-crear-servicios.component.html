@@ -50,11 +50,12 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Nombres</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Cedula</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Email</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Tecnico</th>
               <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Telefono</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Ciudad</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Categoria</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Descripcion de servicio</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Duracion de servicio</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Precio del servicio</th>
               <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Editar</th>
               <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Eliminar</th>
             </tr>
@@ -63,9 +64,10 @@
             <tr *ngFor="let s of servicios | paginate: { itemsPerPage: 10, currentPage: p }">
               <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.nombres}}</td>
               <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.telefono}}</td>
-              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.categoria}}</td>
+              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.categoriadescripcion}}</td>
               <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.descripcion}}</td>
               <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.duracion}}</td>
+              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.precio}}$</td>
               <td style="text-align: center; color: blue;"><a [routerLink]="['/servicio/edit', s.idServicio]" class="btn">
                 <img src="./assets/edit.png" height="18px" alt="">
               </a></td>

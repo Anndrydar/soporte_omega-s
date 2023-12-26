@@ -67,7 +67,7 @@ crearservicio(servicio: Servicio){
 }
 
 verservicios(){
-  return this.http.get(this.API + '/tecnicos')
+  return this.http.get(this.API + '/servicios')
 }
 
 verservicio(idtecnico: number): Observable<Tecnico>{
