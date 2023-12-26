@@ -1,0 +1,46 @@
+<div style="margin-top: 50px;" class="container-fluid py-4 d-flex justify-content-center align-items-center">
+  <form>
+    <div class="input-group mb-3">
+      <span><input type="text" [(ngModel)]="nombre_empresa" [ngModelOptions]="{standalone: true}" style="width: 500px;" (keyup)="buscarPorNombre()" class="form-control" placeholder="Busca empresas aceptadas" aria-label="Recipient's username" aria-describedby="basic-addon2"></span>
+      <div class="input-group-append">
+        <button class="btn btn-outline-primary" style="background-color:rgb(25, 25, 43);" (click)="buscarPorNombre()"  type="button">
+          <img src="./assets/lupa.png" height="15px" alt="">
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="table-wrapper-scroll-y my-custom-scrollbar py-2"  style="max-height: 200px; overflow-y: auto;">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Ruc</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Email</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Ciudad</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Empresa</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Ingreso</th>
+        </tr>
+      </thead>  
+      <tbody>
+        <tr *ngFor="let a of aceptadas | paginate: { itemsPerPage: 10, currentPage: p }">
+          <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{a.ruc}}</td>
+          <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{a.email}}</td>
+          <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{a.ciudad}}</td>
+          <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{a.nombre_empresa}}</td>
+          <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{a.fecha_ingreso}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<div class="container-fluid py-2 d-flex justify-content-center">
+  <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"  nextLabel="Siguiente"></pagination-controls>
+</div>

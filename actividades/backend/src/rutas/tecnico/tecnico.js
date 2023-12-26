@@ -7,4 +7,8 @@ const router = Router()
 router.post('/tecnicos',creartecnico)
 
 
+
+
+
+
 module.exports = router

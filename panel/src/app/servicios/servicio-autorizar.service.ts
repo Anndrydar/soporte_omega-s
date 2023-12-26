@@ -23,6 +23,14 @@ constructor(private http: HttpClient) {
     return this.http.get(this.API + '/ver')
   }
 
+  getaceptados(){
+    return this.http.get(this.API + '/aceptados')
+  }
+
+  buscarpornombre(nombre_empresa: String){
+    return this.http.get(this.API + '/aceptados/' +nombre_empresa)
+  }
+
 crearSolicitud(empresa: Empresa){
   return this.http.post(this.API + '/solicitud',empresa)
 }

@@ -21,7 +21,6 @@
         <tr>
           <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Ruc</th>
           <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Email</th>
-          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Telefono</th>
           <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Direccion</th>
           <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Empresa</th>
           <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Ciudad</th>
@@ -34,7 +33,6 @@
         <tr *ngFor="let so of solicitudes | paginate: { itemsPerPage: 10, currentPage: p }">
           <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.ruc}}</td>
           <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.email}}</td>
-          <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.telefono}}</td>
           <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.direccion}}</td>
           <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.nombre_empresa}}</td>
           <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{so.ciudad}}</td>

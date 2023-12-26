@@ -3,6 +3,7 @@ import { ServicioEmpresaService } from 'src/app/servicios/servicio-empresa.servi
 import { ServicioInformacionService } from 'src/app/servicios/servicio-informacion.service';
 import { ServicioTecnicoService } from 'src/app/servicios/servicio-tecnico.service';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,6 +17,8 @@ export class HomeComponent  implements OnInit{
   social: any;
   mis: any;
   msm: any;
+  decodedImage: any
+  image: string;
 
   
   constructor(private servicio:ServicioTecnicoService,
@@ -31,12 +34,13 @@ export class HomeComponent  implements OnInit{
 
  verServicios(){
   this.servicio.verServicios().subscribe(
-    res=>{
-  this.servicios = res;
-  console.log(res);
+    res  => {
+      this.servicios = res
     }
   )
- }
+}
+
+
 buscar(){
 this.servicio.buscar(this.descripcion).subscribe(
   res=>{
@@ -62,18 +66,6 @@ verRedSocial(){
       console.log(res)
       }
     )
-}
-
-
-
-
-verMision(){
-  this.servicio3.verMision().subscribe(
-    res=>{
-      this.mis = res
-      console.log(res)
-    }
-  )
 }
 
 

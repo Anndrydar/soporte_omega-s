@@ -15,6 +15,5 @@ server.use(require('../src/rutas/reportes/empresa'))
 server.use(require('../src/rutas/plan/plan'))
 server.use(require('../src/rutas/tecnico/tecnico'))
 
-
 server.listen(port)
 console.log('Servidor corriendo por el puerto ',port)

@@ -6,20 +6,35 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PanelAutorizarComponent } from './componentes/panel-autorizar/panel-autorizar.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
+import { PanelCrearTecnicosComponent } from './componentes/panel-crear-tecnicos/panel-crear-tecnicos.component';
+import { PanelCrearServiciosComponent } from './componentes/panel-crear-servicios/panel-crear-servicios.component';
+import { PanelCrearContactoComponent } from './componentes/panel-crear-contacto/panel-crear-contacto.component';
+import { PanelCrearCategoriasComponent } from './componentes/panel-crear-categorias/panel-crear-categorias.component';
+import { PanelAceptadosComponent } from './componentes/panel-aceptados/panel-aceptados.component';
+import { EditCategoriaComponent } from './componentes/editar/edit-categoria/edit-categoria.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PanelAutorizarComponent
+    PanelAutorizarComponent,
+    NavegacionComponent,
+    PanelCrearTecnicosComponent,
+    PanelCrearServiciosComponent,
+    PanelCrearContactoComponent,
+    PanelCrearCategoriasComponent,
+    PanelAceptadosComponent,
+    EditCategoriaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

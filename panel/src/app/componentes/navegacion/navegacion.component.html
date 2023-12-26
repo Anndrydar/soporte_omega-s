@@ -1,0 +1,35 @@
+<!-- app.component.html -->
+
+<div class="container-fluid p-0">
+    <div class="row m-0">
+      <!-- Barra de navegación vertical con color de fondo personalizado -->
+      <nav class="col-md-2 d-none d-md-block sidebar bg-custom">
+        <div class="sidebar-sticky h-100">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href=" ">
+                Opción 1
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/aceptadas">
+                Opción 2
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/categoria">
+                Opción 3
+              </a>
+            </li>
+            <!-- Agrega más opciones según sea necesario -->
+          </ul>
+        </div>
+      </nav>
+  
+      <!-- Contenido principal con margen -->
+      <main role="main" class="col-md-10 mt-3">
+        <!-- Aquí va el contenido principal de tu aplicación Angular -->
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>

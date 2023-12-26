@@ -16,8 +16,8 @@ export class PanelAutorizarComponent implements OnInit {
   p: number = 1;
   solicitudes: any;  
   nombre_empresa = '';
-  nombre: String = 'Anndry';
-
+  mensaje = 'Su cuenta ha sido aceptada con exito'
+  
 
   empresa: Empresa = {
     ruc: '',
@@ -79,9 +79,12 @@ this.servicio.crearSolicitud(acepta).subscribe(
      this.verEmpresas()
   }
 )
-
 const idem = idempresa.toString()
 this.servicio.eliminarEmpresa(idem).subscribe()
+const numero_original = '+593' + telefono
+const cuerpo = 'Saludos estimado: ' + nombre_empresa + '. ' + this.mensaje
+const enlace = 'https://wa.me/' + numero_original + '?text=' + encodeURIComponent(cuerpo)
+window.open(enlace)
 }
 
 rechazo(idempresa: Number){
@@ -276,4 +279,10 @@ exportarpdf(ruc: String,descripcion:String,
   const documento = pdfMake.createPdf(pdfDocu);
   documento.open();
 }
+
+
+
+
+
+
 }

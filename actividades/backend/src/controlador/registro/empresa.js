@@ -85,7 +85,18 @@ const crearSolicitud = async(req,res)=>{
             res.status(200).json(datosEmpresa.rows)
             }
        
+const veraceptados = async(req,res)=>{
+  const response = await pool.query('select nombre_empresa,ciudad,ruc,email,fecha_ingreso from copia')
+  res.status(200).json(response.rows)
+}
 
+const buscaraceptados = async(req,res)=>{
+  const nombre_empresa = req.params.nombre_empresa
+  const response = await pool.query('select nombre_empresa,ciudad,ruc,email,fecha_ingreso from copia where nombre_empresa like $1',[
+    nombre_empresa + '%'
+  ])
+  res.status(200).json(response.rows)
+}
 
 
 module.exports = {
@@ -93,5 +104,7 @@ crearCuenta,
 getSolicitudes,
 crearSolicitud,
 eliminarEmpresa,
-ver
+ver,
+veraceptados,
+buscaraceptados
 }
