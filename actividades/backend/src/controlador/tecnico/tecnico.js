@@ -27,12 +27,47 @@ res.status(200).json(response.rows)
 
 
 
-buscartecnico = async(req,res) => {
+vertecnico = async(req,res) => {
     const idtecnico = req.params.idtecnico
-    const response = await pool.query('select ')
+    const response = await pool.query('select idtecnico, nombres,cedula,email,telefono,ciudad from tecnico where idtecnico = $1',[
+        idtecnico
+    ])
+    res.status(200).json(response.rows)
 }
+
+
+editartecnico = async(req,res)=>{
+    const idtecnico = req.params.idtecnico;
+const {nombres,cedula,email,telefono,ciudad} = req.body;
+const edicion = await pool.query('update tecnico set nombres = $1, cedula = $2, email = $3, telefono = $4, ciudad = $5 where idtecnico = $6',[
+     nombres,
+     cedula,
+     email,
+     telefono,
+     ciudad,
+     idtecnico
+])
+res.json({
+    message:'Tecnico actualizado sastifactoriamente'
+})
+}
+
+
+eliminartecnico = async(req,res)=>{
+const idtecnico = req.params.idcategoria;
+const eliminar = await pool.query('delete from tecnico where idtecnico = $1',[
+    idtecnico
+])
+res.json({
+    message: 'Tecnico eliminado sastifactorimente'
+})
+}
+
 
 module.exports = {
     creartecnico,
-    vertecnicos
+    vertecnicos,
+    vertecnico,
+    editartecnico,
+    eliminartecnico
 }

@@ -25,7 +25,6 @@ ngOnInit(): void {
     this.service.vercategoria(params['idcategoria']).subscribe(
       res =>{
         this.categoria = res[0]
-        console.log(params)
       }
     )
   }

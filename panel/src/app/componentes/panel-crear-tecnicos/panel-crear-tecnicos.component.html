@@ -1,1 +1,33 @@
-<p>panel-crear-tecnicos works!</p>
+<div class="container p-4">
+    <form class="row g-3"  [formGroup]="tecnicoForm" (ngSubmit)="creartecnico()">
+        <div class="col-auto">
+            <label
+             class="visually-hidden">Nombres</label>
+            <input type="text" class="form-control" formControlName="nombres"
+             placeholder="Nombres">
+          </div>
+        <div class="col-auto">
+          <label  class="visually-hidden">Cedula</label>
+          <input type="text" class="form-control" formControlName="cedula"
+           placeholder="Cedula">
+        </div>
+        <div class="col-auto">
+            <label class="visually-hidden">Email</label>
+            <input type="text" class="form-control" formControlName="email"
+             placeholder="Correo">
+          </div>
+          <div class="col-auto">
+            <label  class="visually-hidden">Telefono</label>
+            <input type="text" class="form-control" formControlName="telefono"
+             placeholder="Telefono">
+          </div>
+          <div class="col-auto">
+            <label  class="visually-hidden">Ciudad</label>
+            <input type="text" class="form-control" formControlName="ciudad"
+            placeholder="ciudad">
+          </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3"><img src="./assets/facturar.png" height="22px" alt=""></button>
+        </div>
+      </form>
+    </div>
