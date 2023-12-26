@@ -13,6 +13,7 @@ import { PanelCrearContactoComponent } from './componentes/panel-crear-contacto/
 import { PanelCrearCategoriasComponent } from './componentes/panel-crear-categorias/panel-crear-categorias.component';
 import { PanelAceptadosComponent } from './componentes/panel-aceptados/panel-aceptados.component';
 import { EditCategoriaComponent } from './componentes/editar/edit-categoria/edit-categoria.component';
+import { TecnicoComponent } from './componentes/tecnico/tecnico.component';
 
 
 
@@ -26,7 +27,8 @@ import { EditCategoriaComponent } from './componentes/editar/edit-categoria/edit
     PanelCrearContactoComponent,
     PanelCrearCategoriasComponent,
     PanelAceptadosComponent,
-    EditCategoriaComponent
+    EditCategoriaComponent,
+    TecnicoComponent
   ],
   imports: [
     BrowserModule,

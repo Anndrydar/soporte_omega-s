@@ -20,6 +20,19 @@ res.json({
 }
 
 
+vertecnicos = async(req,res)=>{
+const response = await pool.query('select idTecnico,nombres,cedula,email,telefono,ciudad from tecnico')
+res.status(200).json(response.rows)
+}
+
+
+
+buscartecnico = async(req,res) => {
+    const idtecnico = req.params.idtecnico
+    const response = await pool.query('select ')
+}
+
 module.exports = {
-    creartecnico
+    creartecnico,
+    vertecnicos
 }

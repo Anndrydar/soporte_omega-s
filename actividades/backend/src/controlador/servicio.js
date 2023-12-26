@@ -58,7 +58,7 @@ vercategorias = async(req,res)=>{
 
 vercategoria = async(req,res)=>{
     const idcategoria = req.params.idcategoria;
-    const response = await pool.query('select descripcion from categoria where idcategoria = $1',[
+    const response = await pool.query('select idcategoria, descripcion from categoria where idcategoria = $1',[
         idcategoria
     ])
     res.status(200).json(response.rows)
