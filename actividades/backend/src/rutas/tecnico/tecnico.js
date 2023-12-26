@@ -5,12 +5,11 @@ vertecnico,editartecnico,eliminartecnico
 const router = Router()
 
 
-
 router.post('/tecnicos',creartecnico)
 router.get('/tecnicos',vertecnicos)
 router.get('/tecnico/:idtecnico',vertecnico)
 router.put('/tecnico/:idtecnico',editartecnico)
-router.delete('/tecnico/:idtecnico')
+router.delete('/tecnico/:idtecnico',eliminartecnico)
 
 
 

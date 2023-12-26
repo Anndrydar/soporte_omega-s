@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Categoria } from '../interfaces/categoria';
 import {Observable} from 'rxjs'
 import { Tecnico } from '../interfaces/tecnico';
+import { Servicio } from '../interfaces/servicio';
 
 @Injectable({
   providedIn: 'root'
@@ -59,4 +60,26 @@ eliminartecnico(idtecnico: number){
 return this.http.delete(this.API + '/tecnico/' +idtecnico)
 }
 
+
+//servicios
+crearservicio(servicio: Servicio){
+  return this.http.post(this.API + '/servicios',servicio)
+}
+
+verservicios(){
+  return this.http.get(this.API + '/tecnicos')
+}
+
+verservicio(idtecnico: number): Observable<Tecnico>{
+return this.http.get<Tecnico>(this.API + '/tecnico/' +idtecnico)
+}
+
+editarservicio(idtecnico: number, tecnico: Tecnico){
+  return this.http.put(this.API + '/tecnico/' +idtecnico,tecnico)
+}
+
+
+eliminarservicio(idtecnico: number){
+return this.http.delete(this.API + '/tecnico/' +idtecnico)
+}
 }

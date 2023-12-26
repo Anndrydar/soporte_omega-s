@@ -5,6 +5,8 @@ import { PanelCrearCategoriasComponent } from './componentes/panel-crear-categor
 import { PanelAceptadosComponent } from './componentes/panel-aceptados/panel-aceptados.component';
 import { EditCategoriaComponent } from './componentes/editar/edit-categoria/edit-categoria.component';
 import { PanelCrearTecnicosComponent } from './componentes/panel-crear-tecnicos/panel-crear-tecnicos.component';
+import { EditTecnicoComponent } from './componentes/editar/edit-tecnico/edit-tecnico.component';
+import { PanelCrearServiciosComponent } from './componentes/panel-crear-servicios/panel-crear-servicios.component';
 
 
 const routes: Routes = [
@@ -31,8 +33,22 @@ const routes: Routes = [
   {
     path: 'tecnico',
     component: PanelCrearTecnicosComponent
-  }
+  },
+  {
+    path: 'tecnico/edit/:idtecnico',
+    component: EditTecnicoComponent
+  },
 
+
+  //servicios
+  {
+    path: 'servicio',
+    component: PanelCrearServiciosComponent
+  },
+  {
+    path: 'tecnico/edit/:idtecnico',
+    component: EditTecnicoComponent
+  },
 ];
 
 @NgModule({

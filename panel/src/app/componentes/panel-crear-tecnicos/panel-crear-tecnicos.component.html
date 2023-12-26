@@ -27,7 +27,44 @@
             placeholder="ciudad">
           </div>
         <div class="col-auto">
-          <button type="submit" class="btn btn-primary mb-3"><img src="./assets/facturar.png" height="22px" alt=""></button>
+          <button type="submit" class="btn mb-3" style="border: none;"><img src="./assets/create.png" height="22px" alt=""></button>
         </div>
       </form>
     </div>
+
+
+
+    <div class="table-wrapper-scroll-y my-custom-scrollbar py-2"  style="max-height: 2000px; overflow-y: auto;">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Nombres</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Cedula</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Email</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Telefono</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Ciudad</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Editar</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Eliminar</th>
+            </tr>
+          </thead>  
+          <tbody>
+            <tr *ngFor="let t of tecnicos | paginate: { itemsPerPage: 10, currentPage: p }">
+              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{t.nombres}}</td>
+              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{t.cedula}}</td>
+              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{t.email}}</td>
+              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{t.telefono}}</td>
+              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{t.ciudad}}</td>
+              <td style="text-align: center; color: blue;"><a [routerLink]="['/tecnico/edit', t.idtecnico]" class="btn">
+                <img src="./assets/edit.png" height="18px" alt="">
+              </a></td>
+              <td style="text-align: center; color: red;"><a (click)="eliminartecnico(t.idtecnico)"  class="btn">
+                <img src="./assets/delete.png" height="18px" alt="">
+              </a></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+ <div class="container-fluid py-2 d-flex justify-content-center">
+      <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"  nextLabel="Siguiente"></pagination-controls>
+    </div>
+

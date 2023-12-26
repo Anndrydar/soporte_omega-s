@@ -1,1 +1,81 @@
-<p>panel-crear-servicios works!</p>
+<div class="container p-4">
+    <form class="row g-3"  [formGroup]="servicioForm" (ngSubmit)="crearservicio()">
+        <div class="col-auto">
+            <div class="form-group">
+                <select  class="form-select form-select-sm" formControlName="idcategoria">
+                    <option value="">Seleccione una categoria</option>
+                    <option *ngFor="let c of categorias" value="{{c.idcategoria}}" >
+                        {{c.descripcion}}
+                    </option>
+                  </select>
+            </div>
+          </div>
+        <div class="col-auto">
+            <div class="form-group">
+                <select  class="form-select form-select-sm" formControlName="idtecnico">
+                    <option value="">Seleccione un tecnico</option>
+                    <option *ngFor="let t of tecnicos" value="{{t.idtecnico}}" >
+                        tecnico:{{t.nombres}} 
+                        cedula:{{t.cedula}} 
+                        celular:{{t.telefono}} 
+                        ciudad:{{t.ciudad}}
+                    </option>
+                  </select>
+            </div>
+        </div>
+        <div class="col-auto">
+            <label class="visually-hidden">Descripcion</label>
+            <input type="text" class="form-control" formControlName="descripcion"
+             placeholder="Descripcion de servicio">
+          </div>
+          <div class="col-auto">
+            <label  class="visually-hidden">Precio</label>
+            <input type="number" class="form-control" formControlName="precio"
+             placeholder="Precio">
+          </div>
+          <div class="col-auto">
+            <label  class="visually-hidden">Duracion</label>
+            <input type="text" class="form-control" formControlName="duracion"
+            placeholder="duracion de servicio">
+          </div>
+        <div class="col-auto">
+          <button type="submit" class="btn mb-3" style="border: none;"><img src="./assets/create.png" height="22px" alt=""></button>
+        </div>
+      </form>
+    </div>
+
+
+
+    <div class="table-wrapper-scroll-y my-custom-scrollbar py-2"  style="max-height: 2000px; overflow-y: auto;">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Nombres</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Cedula</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Email</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Telefono</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Ciudad</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Editar</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Eliminar</th>
+            </tr>
+          </thead>  
+          <tbody>
+            <tr *ngFor="let s of servicios | paginate: { itemsPerPage: 10, currentPage: p }">
+              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.nombres}}</td>
+              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.telefono}}</td>
+              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.categoria}}</td>
+              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.descripcion}}</td>
+              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.duracion}}</td>
+              <td style="text-align: center; color: blue;"><a [routerLink]="['/servicio/edit', s.idServicio]" class="btn">
+                <img src="./assets/edit.png" height="18px" alt="">
+              </a></td>
+              <td style="text-align: center; color: red;"><a (click)="eliminarservicio(s.idServicio)"  class="btn">
+                <img src="./assets/delete.png" height="18px" alt="">
+              </a></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+ <div class="container-fluid py-2 d-flex justify-content-center">
+      <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"  nextLabel="Siguiente"></pagination-controls>
+    </div>

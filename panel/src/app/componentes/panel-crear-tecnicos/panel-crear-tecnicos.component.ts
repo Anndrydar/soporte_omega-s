@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./panel-crear-tecnicos.component.css']
 })
 export class PanelCrearTecnicosComponent implements OnInit {
-
+p: number = 1;
 tecnicos: any;
 tecnicoForm: FormGroup;
 private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -30,7 +30,7 @@ private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)
     })
   }
   ngOnInit(): void {
-    
+    this.vertecnicos()
 }
 
 creartecnico(){
@@ -56,7 +56,7 @@ vertecnicos(){
 }
 
 
-eliminar(idtecnico: number){
+eliminartecnico(idtecnico: number){
   this.service.eliminartecnico(idtecnico).subscribe(
     res =>{
        this.vertecnicos();

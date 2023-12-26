@@ -54,7 +54,7 @@ res.json({
 
 
 eliminartecnico = async(req,res)=>{
-const idtecnico = req.params.idcategoria;
+const idtecnico = req.params.idtecnico;
 const eliminar = await pool.query('delete from tecnico where idtecnico = $1',[
     idtecnico
 ])
@@ -62,6 +62,7 @@ res.json({
     message: 'Tecnico eliminado sastifactorimente'
 })
 }
+
 
 
 module.exports = {

@@ -1,0 +1,38 @@
+<div class="container p-4">
+    <form class="row g-3" (ngSubmit)="editar()">
+        <div class="col-auto">
+            <label
+             class="visually-hidden">Nombres</label>
+            <input type="text" class="form-control" [(ngModel)]="tecnico.nombres"
+            [ngModelOptions]="{standalone: true}"
+             placeholder="Nombres">
+          </div>
+        <div class="col-auto">
+          <label  class="visually-hidden">Cedula</label>
+          <input type="text" class="form-control" [(ngModel)]="tecnico.cedula"
+          [ngModelOptions]="{standalone: true}"
+           placeholder="Cedula">
+        </div>
+        <div class="col-auto">
+            <label class="visually-hidden">Email</label>
+            <input type="text" class="form-control" [(ngModel)]="tecnico.email"
+            [ngModelOptions]="{standalone: true}"
+             placeholder="Correo">
+          </div>
+          <div class="col-auto">
+            <label  class="visually-hidden">Telefono</label>
+            <input type="text" class="form-control" [(ngModel)]="tecnico.telefono"
+            [ngModelOptions]="{standalone: true}"
+             placeholder="Telefono">
+          </div>
+          <div class="col-auto">
+            <label  class="visually-hidden">Ciudad</label>
+            <input type="text" class="form-control" [(ngModel)]="tecnico.ciudad"
+            [ngModelOptions]="{standalone: true}"
+            placeholder="ciudad">
+          </div>
+        <div class="col-auto">
+          <button type="submit" class="btn mb-3" style="border: none;"><img src="./assets/edit.png" height="22px" alt=""></button>
+        </div>
+      </form>
+    </div>
