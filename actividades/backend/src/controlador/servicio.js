@@ -23,7 +23,7 @@ const crearservicio = async(req,res)=>{
 
 const buscarServicio= async(req,res)=>{
 const descripcion = req.params.descripcion;
-const respuesta = await pool.query('select descripcion,precio,duracion,idcategoria,idtecnico,idservicio from servicio where descripcion like $1',[
+const respuesta = await pool.query('select c.descripcion as categoriadescripcion, s.descripcion,s.precio,s.duracion, t.nombres, t.telefono, t.ciudad, from servicio s join tecnico t on t.idtecnico = s.idtecnico join categoria c on c.idcategoria = s.idcategoria where s.descripcion like $1',[
     descripcion + '%'
 ])
 res.status(200).json(respuesta.rows);

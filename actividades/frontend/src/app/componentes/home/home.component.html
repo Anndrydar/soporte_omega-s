@@ -45,7 +45,21 @@
   </div>
 </div>
 
-
+<div class="container">
+  <div class="row">
+    <div *ngFor="let s of servicios; let i = index" class="col-md-4 mb-3">
+      <div class="card" (click)="toggleDetails(i)">
+        <div class="card-body">
+          <h5 class="card-title">{{s.categoriadescripcion}}</h5>
+          <div class="detalle-servicio" [class.visible]="s.showDetails">
+            <p class="card-text">{{s.descripcion}}</p>
+            <p class="card-text">{{s.nombres}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -71,4 +85,35 @@
   .table-wrapper-scroll-y::-webkit-scrollbar-thumb {
     background-color: transparent !important; /* Color transparente para la barra de desplazamiento */
   }
+
+
+  .servicio-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.servicio-box {
+  width: calc(33.33% - 20px);
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.categoria {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.detalle-servicio {
+  display: none;
+  margin-top: 10px;
+}
+
+.detalle-servicio.visible {
+  display: block;
+}
 </style>
