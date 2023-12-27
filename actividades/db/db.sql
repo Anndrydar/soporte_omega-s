@@ -147,3 +147,8 @@ password text,
 plan text
 );
 
+--tabla planes
+create table planes(
+idplan serial primary key,
+descripcion text
+);
