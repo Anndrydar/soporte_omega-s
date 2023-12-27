@@ -31,7 +31,7 @@ res.status(200).json(respuesta.rows);
 
 
 const verServicios = async(req,res)=>{
-const respuesta = await pool.query('select s.idservicio,s.idcategoria,s.idtecnico, s.descripcion, s.duracion, s.precio, c.descripcion as categoriadescripcion, t.nombres,t.telefono from servicio s join categoria c on c.idcategoria = s.idcategoria join tecnico t on t.idtecnico = s.idtecnico ')
+const respuesta = await pool.query('select s.idservicio,s.idcategoria,s.idtecnico, s.descripcion, s.duracion, s.precio, c.descripcion as categoriadescripcion, t.nombres,t.telefono,t.ciudad from servicio s join categoria c on c.idcategoria = s.idcategoria join tecnico t on t.idtecnico = s.idtecnico ')
 res.status(200).json(respuesta.rows);
 }
 

@@ -8,15 +8,15 @@
     <div class="collapse navbar-collapse" id="subNavbar">
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="./assets/contacto.png" height="20px" alt=""> Contactanos</a>
+          <a class="nav-link dropdown-toggle"  style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: small;" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="./assets/contacto.png" height="20px" alt=""> Contactanos</a>
           <ul class="dropdown-menu">
-            <li *ngFor="let so of social"><a class="dropdown-item" target="_blank" href="{{so.link}}"><img src="{{so.img}}" height="15px" alt=""> {{so.social}}</a></li>
+            <li *ngFor="let so of social"><a   style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: small;" class="dropdown-item" target="_blank" href="{{so.link}}"><img src="{{so.img}}"height="15px" alt=""> {{so.social}}</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"  style="color: rgb(25, 25, 43);" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="./assets/empresa.png" height="20px" alt="">Mis productos</a>
+          <a class="nav-link dropdown-toggle"  style="color: rgb(25, 25, 43);" data-bs-toggle="dropdown" href="#" role="button"  style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: small;" aria-expanded="false"><img src="./assets/empresa.png" height="15px" alt="">Mis productos</a>
           <ul class="dropdown-menu">
-            <li *ngFor="let p of productos"><a  style="color: rgb(25, 25, 43);" class="dropdown-item" target="_blank" href="{{p.url}}">{{p.nombre}}</a></li>
+            <li *ngFor="let p of productos"><a  style="color: rgb(25, 25, 43);" class="dropdown-item" target="_blank"  style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: small;" href="{{p.url}}">{{p.nombre}}</a></li>
           </ul>
         </li>
       </ul>
@@ -34,7 +34,7 @@
   <div class="container-fluid d-flex justify-content-center align-items-center">
     <form>
       <div class="input-group mb-3">
-        <span><input type="text" [(ngModel)]="descripcion" [ngModelOptions]="{standalone: true}" (keyup)="buscar()" class="col-xs-4 rounded" style="width: 500px;" class="form-control" placeholder="¿Qué servicios buscas?" aria-label="Recipient's username" aria-describedby="basic-addon2"></span>
+        <span><input type="text"  style="font-family: Verdana, Geneva, Tahoma, sans-serif;" [(ngModel)]="descripcion" [ngModelOptions]="{standalone: true}" (keyup)="buscar()" class="col-xs-4 rounded" style="width: 500px;" class="form-control" placeholder="¿Qué servicios buscas?" aria-label="Recipient's username" aria-describedby="basic-addon2"></span>
         <div class="input-group-append">
           <button class="btn btn-outline-primary" style="background-color: rgb(25, 25, 43);" type="button">
             <img src="./assets/lupa.png" height="15px" alt="">
@@ -50,12 +50,13 @@
 <div class="container-fluid py-2" style="max-height: 150px; overflow-y: auto;">
   <div class="row">
     <div *ngFor="let s of servicios; let i = index" class="col-md-4 mb-3">
-      <div class="card card-hover-effect shadow rounded" style="border: none;" (click)="toggleDetails(i)">
+      <div class="card card-hover-effect shadow rounded" style="background-color: rgb(25, 25, 43);color: white; border: none;" (click)="toggleDetails(i)">
         <div class="card-body">
           <h5 class="card-title text-center font-weight-bold" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: medium;">{{s.descripcion}}</h5>
           <div class="detalle-servicio" [class.visible]="s.showDetails">
-            <p class="card-text " style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{s.categoriadescripcion}}</p>
-            <p class="card-text text-muted" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Tecnico: {{s.nombres}}</p>
+            <p class="card-text " style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center;">Categoria: {{s.categoriadescripcion}}</p>
+            <p class="card-text" style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: justify;">Tecnico: {{s.nombres}}</p>
+            <p class="card-text" style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: justify;">Origen del tecnico: {{s.ciudad}}</p>
             <!-- Textarea con estilos de Bootstrap -->
             <textarea
               class="form-control mb-2"
