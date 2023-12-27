@@ -15,6 +15,7 @@ import { PanelAceptadosComponent } from './componentes/panel-aceptados/panel-ace
 import { EditCategoriaComponent } from './componentes/editar/edit-categoria/edit-categoria.component';
 import { TecnicoComponent } from './componentes/tecnico/tecnico.component';
 import { EditTecnicoComponent } from './componentes/editar/edit-tecnico/edit-tecnico.component';
+import { EditServicioComponent } from './componentes/editar/edit-servicio/edit-servicio.component';
 
 
 
@@ -30,7 +31,8 @@ import { EditTecnicoComponent } from './componentes/editar/edit-tecnico/edit-tec
     PanelAceptadosComponent,
     EditCategoriaComponent,
     TecnicoComponent,
-    EditTecnicoComponent
+    EditTecnicoComponent,
+    EditServicioComponent
   ],
   imports: [
     BrowserModule,

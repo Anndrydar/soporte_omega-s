@@ -70,16 +70,16 @@ verservicios(){
   return this.http.get(this.API + '/servicios')
 }
 
-verservicio(idtecnico: number): Observable<Tecnico>{
-return this.http.get<Tecnico>(this.API + '/tecnico/' +idtecnico)
+verservicio(idservicio: number): Observable<Servicio>{
+return this.http.get<Servicio>(this.API + '/serviciobyid/' +idservicio)
 }
 
-editarservicio(idtecnico: number, tecnico: Tecnico){
-  return this.http.put(this.API + '/tecnico/' +idtecnico,tecnico)
+editarservicio(idservicio: number, servicio: Servicio){
+  return this.http.put(this.API + '/servicioup/' +idservicio,servicio)
 }
 
 
-eliminarservicio(idtecnico: number){
-return this.http.delete(this.API + '/tecnico/' +idtecnico)
+eliminarservicio(idservicio: number){
+return this.http.delete(this.API + '/servicio/' +idservicio)
 }
 }

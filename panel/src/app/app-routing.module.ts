@@ -7,6 +7,7 @@ import { EditCategoriaComponent } from './componentes/editar/edit-categoria/edit
 import { PanelCrearTecnicosComponent } from './componentes/panel-crear-tecnicos/panel-crear-tecnicos.component';
 import { EditTecnicoComponent } from './componentes/editar/edit-tecnico/edit-tecnico.component';
 import { PanelCrearServiciosComponent } from './componentes/panel-crear-servicios/panel-crear-servicios.component';
+import { EditServicioComponent } from './componentes/editar/edit-servicio/edit-servicio.component';
 
 
 const routes: Routes = [
@@ -46,8 +47,8 @@ const routes: Routes = [
     component: PanelCrearServiciosComponent
   },
   {
-    path: 'tecnico/edit/:idtecnico',
-    component: EditTecnicoComponent
+    path: 'servicio/edit/:idservicio',
+    component: EditServicioComponent
   },
 ];
 

@@ -98,10 +98,10 @@ error(){
 }
 
 
-eliminarservicio(idServicio: number){
-  this.service.eliminarservicio(idServicio).subscribe(
+eliminarservicio(idservicio: number){
+  this.service.eliminarservicio(idservicio).subscribe(
     res=>{
-        
+        this.verservicios()
     }
   )
 }

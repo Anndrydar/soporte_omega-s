@@ -10,9 +10,11 @@ const router = Router()
 router.get('/servicio/:descripcion',buscarServicio);
 router.get('/servicios',verServicios)
 router.post('/servicios',crearservicio)
-router.put('/servicio/:idservicio',editarservicio)
+router.put('/servicioup/:idservicio',editarservicio)
 router.delete('/servicio/:idservicio',eliminarservicio)
-router.get('/servicio/:idservicio',verservicio)
+router.get('/serviciobyid/:idservicio',verservicio)
+
+
 
 //categorias
 router.post('/categorias',crearcategoria)

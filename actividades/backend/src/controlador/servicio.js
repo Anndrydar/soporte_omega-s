@@ -23,7 +23,7 @@ const crearservicio = async(req,res)=>{
 
 const buscarServicio= async(req,res)=>{
 const descripcion = req.params.descripcion;
-const respuesta = await pool.query('select c.descripcion as categoriadescripcion, s.descripcion,s.precio,s.duracion, t.nombres, t.telefono, t.ciudad, from servicio s join tecnico t on t.idtecnico = s.idtecnico join categoria c on c.idcategoria = s.idcategoria where s.descripcion like $1',[
+const respuesta = await pool.query('select c.descripcion as categoriadescripcion, s.descripcion,s.precio,s.duracion, t.nombres, t.telefono, t.ciudad from servicio s join tecnico t on t.idtecnico = s.idtecnico join categoria c on c.idcategoria = s.idcategoria where s.descripcion like $1',[
     descripcion + '%'
 ])
 res.status(200).json(respuesta.rows);
@@ -31,13 +31,13 @@ res.status(200).json(respuesta.rows);
 
 
 const verServicios = async(req,res)=>{
-const respuesta = await pool.query('select t.nombres, t.telefono, c.descripcion as categoriadescripcion, s.descripcion, s.duracion, s.precio from servicio s join tecnico t on t.idtecnico = s.idtecnico join categoria c on c.idcategoria = s.idcategoria')
+const respuesta = await pool.query('select s.idservicio,s.idcategoria,s.idtecnico, s.descripcion, s.duracion, s.precio, c.descripcion as categoriadescripcion, t.nombres,t.telefono from servicio s join categoria c on c.idcategoria = s.idcategoria join tecnico t on t.idtecnico = s.idtecnico ')
 res.status(200).json(respuesta.rows);
 }
 
 
 const verservicio = async(req,res)=>{
-const idservicio = req.params.idServicio
+const idservicio = req.params.idservicio
 const response = await pool.query('select idservicio, idcategoria,idtecnico,descripcion,precio,duracion from servicio where idservicio = $1',[
     idservicio
 ])

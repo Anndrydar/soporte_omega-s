@@ -1,0 +1,50 @@
+<div class="container p-4">
+    <form class="row g-3" (ngSubmit)="editar()">
+        <div class="col-auto">
+            <div class="form-group">
+                <select  class="form-select form-select-sm" [(ngModel)]="servicio.idcategoria"
+                [ngModelOptions]="{standalone: true}">
+                    <option value="">Seleccione una categoria</option>
+                    <option *ngFor="let c of categorias" value="{{c.idcategoria}}" >
+                        {{c.descripcion}}
+                    </option>
+                  </select>
+            </div>
+          </div>
+        <div class="col-auto">
+            <div class="form-group">
+                <select  class="form-select form-select-sm" [(ngModel)]="servicio.idtecnico"
+                [ngModelOptions]="{standalone: true}">
+                    <option value="">Seleccione un tecnico</option>
+                    <option *ngFor="let t of tecnicos" value="{{t.idtecnico}}" >
+                        tecnico:{{t.nombres}} 
+                        cedula:{{t.cedula}} 
+                        celular:{{t.telefono}} 
+                        ciudad:{{t.ciudad}}
+                    </option>
+                  </select>
+            </div>
+        </div>
+        <div class="col-auto">
+            <label class="visually-hidden">Descripcion</label>
+            <input type="text" class="form-control" [(ngModel)]="servicio.descripcion"
+            [ngModelOptions]="{standalone: true}"
+             placeholder="Descripcion de servicio">
+          </div>
+          <div class="col-auto">
+            <label  class="visually-hidden">Precio</label>
+            <input type="number" class="form-control" [(ngModel)]="servicio.precio"
+            [ngModelOptions]="{standalone: true}"
+             placeholder="Precio">
+          </div>
+          <div class="col-auto">
+            <label  class="visually-hidden">Duracion</label>
+            <input type="text" class="form-control" [(ngModel)]="servicio.duracion"
+            [ngModelOptions]="{standalone: true}"
+            placeholder="duracion de servicio">
+          </div>
+        <div class="col-auto">
+          <button type="submit" class="btn mb-3" style="border: none;"><img src="./assets/edit.png" height="22px" alt=""></button>
+        </div>
+      </form>
+    </div>
