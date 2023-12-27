@@ -1,20 +1,4 @@
---creacion tabla para la informacion acerca de la empresa
-create table informacion_empresa(
-idInfo serial primary key,
-ubicacion text,
-mision text,
-vision text
-);
 
-
---creacion tabla para guardar las redes sociales de la empresa
-create table redSocial(
-idRed serial primary key,
-idInfo serial,
-nombre text,
-url text,
-logo text
-);
 
 alter table redSocial
   add constraint idInfo
@@ -38,20 +22,12 @@ insert into redSocial(idInfo,nombre,url,logo)values(1,'Email','https://mail.goog
 
 --creacion tabla para los servicios que ofrecen
 create table servicio(
-idServicio serial primary key,
+idservicio serial primary key,
+idcategoria serial,
+idtecnico serial,
 descripcion text unique,
 precio real,
 duracion text
-);
-
-
---creacion tabla para almacenar credenciales de la empresa
-create table nombres_empresa(
-idName serial primary key,
-nombre text unique,
-imagen_logo text,
-imagen_home text,
-fecha_hora timestamp default current_timestamp
 );
 
 
@@ -69,12 +45,6 @@ alter table enlaces
   foreign key (idName)
   references nombres_empresa(idName);
   
---insersion de las credenciales de la empresa
-insert into nombres_empresa(nombre,imagen_logo,imagen_home)values
-('Omega','https://i.pinimg.com/originals/b6/04/7a/b6047a0809e6575a92443a6924e60eae.png',
- 'https://i.pinimg.com/originals/b6/04/7a/b6047a0809e6575a92443a6924e60eae.png'
-);
-
 
 --insersiones de enlaces para acceder a los productos de omega en linea
 insert into enlaces(idName,nombre,url)values
@@ -91,28 +61,6 @@ insert into enlaces(idName,nombre,url)values
 );
 
 
-
-
-
-
---insersiones de servicios que ofrece la empresa, esto puede cambiar o variar
-insert into 
-servicio(descripcion,precio,duracion)
-values('Instalacion de programas',5.00,'30 minutos dependiendo del programa');
-
-
-insert into 
-servicio(descripcion,precio,duracion)
-values('Actualizacion de sistemas operativos',10.00,'2 horas');
-
-
-insert into 
-servicio(descripcion,precio,duracion)
-values('Instalacion de antivirus',10.00,'1 hora');
-
-insert into 
-servicio(descripcion,precio,duracion)
-values('Cambio de pasta termica en el procesador',15.00,'1 hora');
 
 
 
@@ -152,3 +100,25 @@ create table planes(
 idplan serial primary key,
 descripcion text
 );
+
+
+
+
+--Creacion de la tabla tecnico
+create table tecnico(
+idtecnico serial primary key,
+nombres text,
+cedula varchar(10) unique,
+email text,
+telefono varchar(10),
+ciudad text
+);
+
+
+--Creacion de la tabla categoria
+create table categoria(
+idcategoria serial primary key,
+descripcion text
+);
+
+
