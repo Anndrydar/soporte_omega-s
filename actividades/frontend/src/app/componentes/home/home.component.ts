@@ -19,6 +19,13 @@ export class HomeComponent  implements OnInit{
   msm: any;
   decodedImage: any
   image: string;
+  
+  public logos = [
+  {
+    logo: './assets/omega.png',
+    nombre: 'Asistencia omega web'
+  }
+]
 
   
   constructor(private servicio:ServicioTecnicoService,

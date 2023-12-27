@@ -27,8 +27,8 @@
 
 
 <div class="sticky-top" style="top: 26px;">
-  <div *ngFor="let em of empresa" class="container-fluid  d-flex justify-content-center align-items-center">
-    <img src="{{em.imagen_home}}" width="300" height="250" class="img-fluid" alt="...">
+  <div *ngFor="let l of logos" class="container-fluid  d-flex justify-content-center align-items-center">
+    <img src="{{l.logo}}" width="300" height="250" class="img-fluid" alt="...">
   </div>
 
   <div class="container-fluid d-flex justify-content-center align-items-center">
@@ -45,24 +45,29 @@
   </div>
 </div>
 
-<div class="container" style="max-height: 200px; overflow-y: auto; background-color: transparent;">
+
+
+
+<div class="container-fluid py-2" style="max-height: 150px; overflow-y: auto;">
   <div class="row">
     <div *ngFor="let s of servicios; let i = index" class="col-md-4 mb-3">
-      <div class="card card-hover-effect" (click)="toggleDetails(i)">
+      <div class="card card-hover-effect shadow" style="border: none;" (click)="toggleDetails(i)">
         <div class="card-body">
-          <h5 class="card-title">{{s.descripcion}}</h5>
+          <h5 class="card-title" style="text-align: center;">{{s.descripcion}}</h5>
           <div class="detalle-servicio" [class.visible]="s.showDetails">
             <p class="card-text">{{s.categoriadescripcion}}</p>
             <p class="card-text">{{s.nombres}}</p>
-          </div>
-        </div>
-        <div class="modal-overlay">
-          <div class="modal-content">
-            <!-- Contenido del modal -->
-            <h5>{{s.descripcion}}</h5>
-            <p>{{s.categoriadescripcion}}</p>
-            <p>{{s.nombres}}</p>
-            <!-- Puedes agregar más contenido según tus necesidades -->
+            <!-- Textarea con estilos de Bootstrap -->
+            <textarea
+              class="form-control mb-2"
+              [(ngModel)]="s.comentario"
+              placeholder="Escribele un mensaje al tecnico"
+              (click)="$event.stopPropagation()"
+              rows="4" 
+              style="resize: vertical;"
+            ></textarea>
+            <!-- Botón de enviar -->
+            <button style="border: none; background-color: rgb(15, 183, 15);" class="btn" (click)="enviarmensaje(s.telefono, s.descripcion, s.comentario)"><img src="./assets/whatsapp.png" height="15px" alt=""> Enviar</button>
           </div>
         </div>
       </div>
@@ -115,5 +120,6 @@
 
 .detalle-servicio.visible {
   display: block;
+
 }
 </style>

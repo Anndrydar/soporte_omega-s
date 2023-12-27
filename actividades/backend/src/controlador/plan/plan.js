@@ -16,7 +16,7 @@ res.json({
 }
 
 const verplan = async(req,res)=>{
-const response = await pool.query('select * from planes')
+const response = await pool.query('select idplan,descripcion from planes')
 res.status(200).json(response.rows)
 }
 

@@ -9,26 +9,24 @@ import Swal from 'sweetalert2';
   styleUrls: ['./navegacion.component.css']
 })
 export class NavegacionComponent implements OnInit {
-empresa: any;
+
+
+logos = [
+  {
+    logo: './assets/omega.png',
+    nombre: 'Asistencia omega web'
+  }
+]
  
 constructor(
   private router: Router,
   private servicio: ServicioEmpresaService
   ){}
 ngOnInit(): void {
-  this.verEmpresa();
 }
 
 
 
-verEmpresa(){
-  this.servicio.verEmpresa().subscribe(
-    res=>{
-         this.empresa = res;
-         console.log(res);
-    }
-  )
-}
 
 
 exit(): void {

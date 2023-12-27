@@ -16,7 +16,6 @@ import { EditCategoriaComponent } from './componentes/editar/edit-categoria/edit
 import { TecnicoComponent } from './componentes/tecnico/tecnico.component';
 import { EditTecnicoComponent } from './componentes/editar/edit-tecnico/edit-tecnico.component';
 import { EditServicioComponent } from './componentes/editar/edit-servicio/edit-servicio.component';
-import { PlanComponent } from './componentes/plan/plan.component';
 import { PanelCrearPlanesComponent } from './componentes/panel-crear-planes/panel-crear-planes.component';
 
 
@@ -35,7 +34,6 @@ import { PanelCrearPlanesComponent } from './componentes/panel-crear-planes/pane
     TecnicoComponent,
     EditTecnicoComponent,
     EditServicioComponent,
-    PlanComponent,
     PanelCrearPlanesComponent
   ],
   imports: [
