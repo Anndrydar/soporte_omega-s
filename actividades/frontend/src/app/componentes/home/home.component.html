@@ -47,34 +47,34 @@
 
 
 
-
 <div class="container-fluid py-2" style="max-height: 150px; overflow-y: auto;">
   <div class="row">
     <div *ngFor="let s of servicios; let i = index" class="col-md-4 mb-3">
-      <div class="card card-hover-effect shadow" style="border: none;" (click)="toggleDetails(i)">
+      <div class="card card-hover-effect shadow rounded" style="border: none;" (click)="toggleDetails(i)">
         <div class="card-body">
-          <h5 class="card-title" style="text-align: center;">{{s.descripcion}}</h5>
+          <h5 class="card-title text-center font-weight-bold" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: medium;">{{s.descripcion}}</h5>
           <div class="detalle-servicio" [class.visible]="s.showDetails">
-            <p class="card-text">{{s.categoriadescripcion}}</p>
-            <p class="card-text">{{s.nombres}}</p>
+            <p class="card-text " style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{s.categoriadescripcion}}</p>
+            <p class="card-text text-muted" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Tecnico: {{s.nombres}}</p>
             <!-- Textarea con estilos de Bootstrap -->
             <textarea
               class="form-control mb-2"
               [(ngModel)]="s.comentario"
-              placeholder="Escribele un mensaje al tecnico"
+              placeholder="Escribele un mensaje al técnico"
               (click)="$event.stopPropagation()"
               rows="4" 
               style="resize: vertical;"
             ></textarea>
             <!-- Botón de enviar -->
-            <button style="border: none; background-color: rgb(15, 183, 15);" class="btn" (click)="enviarmensaje(s.telefono, s.descripcion, s.comentario)"><img src="./assets/whatsapp.png" height="15px" alt=""> Enviar</button>
+            <button class="btn btn-success" (click)="enviarmensaje(s.telefono, s.descripcion, s.comentario)">
+              <img src="./assets/whatsapp.png" height="15px" alt="WhatsApp Icon"> Enviar
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
 
 
