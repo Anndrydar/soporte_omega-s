@@ -80,6 +80,15 @@
 
 
 <style>
+.container-fluid::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+.container-fluid {
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
 .card-hover-effect:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease-in-out;
