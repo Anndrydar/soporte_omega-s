@@ -10,13 +10,9 @@ API: String = 'http://localhost:1000'
   
  
 
-  verRedSocial(){
-    return this.http.get(this.API + '/informacion')
+  verredsocial(){
+    return this.http.get(this.API + '/contactos')
   }
-
-verMision(){
-  return this.http.get(this.API + '/mision')
-}
 
 
 

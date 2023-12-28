@@ -10,7 +10,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle"  style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: small;" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="./assets/contacto.png" height="20px" alt=""> Contactanos</a>
           <ul style="background-color: rgb(25, 25, 43);" class="dropdown-menu">
-            <li *ngFor="let so of social"><a   style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: small; color: white;" class="dropdown-item" target="_blank" href="{{so.link}}"><img src="{{so.img}}"height="15px" alt=""> {{so.social}}</a></li>
+            <li *ngFor="let so of social"><a   style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: small; color: white;" class="dropdown-item" target="_blank" href="{{so.url}}">{{so.nombre}}</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">

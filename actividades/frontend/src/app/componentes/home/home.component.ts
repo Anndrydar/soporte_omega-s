@@ -66,7 +66,7 @@ verImagenHome(){
 
 
 verRedSocial(){
-    this.servicio3.verRedSocial().subscribe(
+    this.servicio3.verredsocial().subscribe(
       res=>{
       this.social = res
       console.log(res)
