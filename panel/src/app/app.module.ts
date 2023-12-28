@@ -20,6 +20,7 @@ import { PanelCrearPlanesComponent } from './componentes/panel-crear-planes/pane
 import { EditPlanComponent } from './componentes/editar/edit-plan/edit-plan.component';
 import { PanelCrearProductosComponent } from './componentes/panel-crear-productos/panel-crear-productos.component';
 import { EditProductoComponent } from './componentes/editar/edit-producto/edit-producto.component';
+import { EditContactoComponent } from './componentes/editar/edit-contacto/edit-contacto.component';
 
 
 
@@ -40,7 +41,8 @@ import { EditProductoComponent } from './componentes/editar/edit-producto/edit-p
     PanelCrearPlanesComponent,
     EditPlanComponent,
     PanelCrearProductosComponent,
-    EditProductoComponent
+    EditProductoComponent,
+    EditContactoComponent
   ],
   imports: [
     BrowserModule,

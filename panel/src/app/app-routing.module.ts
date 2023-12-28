@@ -12,6 +12,8 @@ import { PanelCrearPlanesComponent } from './componentes/panel-crear-planes/pane
 import { EditPlanComponent } from './componentes/editar/edit-plan/edit-plan.component';
 import { PanelCrearProductosComponent } from './componentes/panel-crear-productos/panel-crear-productos.component';
 import { EditProductoComponent } from './componentes/editar/edit-producto/edit-producto.component';
+import { PanelCrearContactoComponent } from './componentes/panel-crear-contacto/panel-crear-contacto.component';
+import { EditContactoComponent } from './componentes/editar/edit-contacto/edit-contacto.component';
 
 
 const routes: Routes = [
@@ -75,7 +77,22 @@ const routes: Routes = [
     path: 'producto/edit/:iden',
     component: EditProductoComponent
   },
+
+
+
+  //contactos
+  {
+    path: 'contacto',
+    component: PanelCrearContactoComponent
+  },
+  {
+    path: 'contacto/edit/:idred',
+    component: EditContactoComponent
+  },
+
+
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

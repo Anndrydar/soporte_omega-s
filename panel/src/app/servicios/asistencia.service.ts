@@ -6,6 +6,7 @@ import { Tecnico } from '../interfaces/tecnico';
 import { Servicio } from '../interfaces/servicio';
 import { Plan } from '../interfaces/plan';
 import { Producto } from '../interfaces/producto';
+import { Contacto } from '../interfaces/contacto';
 
 @Injectable({
   providedIn: 'root'
@@ -137,6 +138,31 @@ crearproducto(producto: Producto){
   return this.http.delete(this.API + '/enlace/' +iden)
   }
 
+
+
+  //contactos
+  crearcontacto(contacto: Contacto){
+    return this.http.post(this.API + '/contacto',contacto)
+    }
+    
+    
+    vercontactos(){
+      return this.http.get(this.API + '/contactos')
+    }
+    
+    vercontacto(idred: number): Observable<Contacto>{
+    return this.http.get<Contacto>(this.API + '/contacto/' +idred)
+    }
+    
+    editarcontacto(idred: number, contacto: Contacto){
+      return this.http.put(this.API + '/contacto/' +idred,contacto)
+    }
+    
+    
+    eliminarcontacto(idred: number){
+    return this.http.delete(this.API + '/contacto/' +idred)
+    }
+  
 
 
 }
