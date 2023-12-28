@@ -183,9 +183,9 @@ h6{
                 <h6>Contraseña no debe tener mas de 20 caracteres</h6>
             </div>
             <div class="form-group">
-                <select style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" class="form-select form-select-sm" formControlName="idplan">
-                    <option  style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" value="">Seleccione plan</option>
-                     <option style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" *ngFor="let p of planes" value="{{p.idplan}}">{{p.descripcion}}</option>
+                <select style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;background-color: rgb(25, 25, 43); color: white;" class="form-select form-select-sm" formControlName="idplan">
+                    <option  style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small; color: white;" value="">Seleccione plan</option>
+                    <option style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small; color: white;" *ngFor="let p of planes" value="{{p.idplan}}">{{p.descripcion}}</option>
                    </select>
             </div>
             <div *ngIf="empresaForm.get('idplan').hasError('required') && empresaForm.get('idplan').touched">
