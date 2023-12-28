@@ -21,7 +21,7 @@ export class HomeComponent  implements OnInit{
   
   public logos = [
   {
-    logo: './assets/omega.png',
+    logo: './assets/omega-s.png',
     nombre: 'Asistencia omega web'
   }
 ]

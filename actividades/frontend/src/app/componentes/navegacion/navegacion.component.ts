@@ -13,7 +13,7 @@ export class NavegacionComponent implements OnInit {
 
 logos = [
   {
-    logo: './assets/omega.png',
+    logo: './assets/omega-s.png',
     nombre: 'Asistencia omega web'
   }
 ]
