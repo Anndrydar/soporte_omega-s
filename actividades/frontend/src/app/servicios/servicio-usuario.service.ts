@@ -19,7 +19,6 @@ login(login:User): Observable<any>{
 }
 
 crearEmpresa(formData: FormData) {
-  // Aquí debes ajustar la URL y cualquier otra configuración específica de tu servidor
   return this.http.post(this.API + '/registro/', formData);
 }
 

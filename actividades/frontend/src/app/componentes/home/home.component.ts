@@ -11,13 +11,10 @@ import { ServicioTecnicoService } from 'src/app/servicios/servicio-tecnico.servi
 })
 export class HomeComponent  implements OnInit{
   servicios: any;
-  empresa: any;
   productos: any;
   descripcion = '';
   social: any;
-  mis: any;
   msm: any;
-  image: string;
   
   public logos = [
   {
@@ -33,7 +30,6 @@ export class HomeComponent  implements OnInit{
     ){}
   ngOnInit(): void {
   this.verServicios();
-  this.verImagenHome();
   this.verRedSocial();
   this.verEnlaces();
 }
@@ -53,15 +49,6 @@ this.servicio.buscar(this.descripcion).subscribe(
   this.servicios = res;
   }
 )
-}
-
-
-verImagenHome(){
-  this.servicio2.verEmpresa().subscribe(
-    res=>{
-   this.empresa = res;
-    }
-  )
 }
 
 
