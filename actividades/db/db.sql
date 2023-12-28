@@ -28,13 +28,20 @@ duracion text
 );
 
 
-
+--Creacion de tabla enlaces para los productos de omega's
 create table enlaces(
 iden serial primary key,
 nombre text,
 url text 
 );
 
+
+--Creacion de tabla contactos para redes sociales de omega's
+create table social(
+idred serial primary key,
+nombre text,
+url text	
+);
 
 
 
