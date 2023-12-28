@@ -1,30 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { AsistenciaService } from 'src/app/servicios/asistencia.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
-import { AsistenciaService } from 'src/app/servicios/asistencia.service';
-
-
 
 @Component({
-  selector: 'app-panel-crear-planes',
-  templateUrl: './panel-crear-planes.component.html',
-  styleUrls: ['./panel-crear-planes.component.css']
+  selector: 'app-panel-crear-productos',
+  templateUrl: './panel-crear-productos.component.html',
+  styleUrls: ['./panel-crear-productos.component.css']
 })
-export class PanelCrearPlanesComponent implements OnInit {
+export class PanelCrearProductosComponent implements OnInit {
   p: number = 1;
-  planes: any;
+  productos: any;
 
 
   
-  planForm: FormGroup;
+  productoForm: FormGroup;
   
     constructor(private servicio: AsistenciaService, private router: Router,
       private formBuilder: FormBuilder
       ){
-        this.planForm = this.formBuilder.group({
-          descripcion: ['', Validators.compose([Validators.required,
+        this.productoForm = this.formBuilder.group({
+          nombre: ['', Validators.compose([Validators.required,
             Validators.minLength(5)])],
+          url: ['', Validators.compose([Validators.required,
+              Validators.minLength(5)])],
         })
       }
   
@@ -33,14 +33,14 @@ export class PanelCrearPlanesComponent implements OnInit {
   
   
     ngOnInit(): void {
-      this.verplanes();
+      this.verproductos();
   }
   
-  crearplanes(){
-    if(this.planForm.valid){
-     this.servicio.crearplan(this.planForm.value).subscribe(
+  crearproductos(){
+    if(this.productoForm.valid){
+     this.servicio.crearproducto(this.productoForm.value).subscribe(
       res => {
-          this.verplanes();
+          this.verproductos()
       }
      )
      this.informacion()
@@ -50,10 +50,10 @@ export class PanelCrearPlanesComponent implements OnInit {
   
   }
   
-  verplanes(){
-    this.servicio.verplanes().subscribe(
+  verproductos(){
+    this.servicio.verproductos().subscribe(
       res =>{
-        this.planes = res;
+        this.productos = res;
       }
     )
   }
@@ -64,7 +64,7 @@ export class PanelCrearPlanesComponent implements OnInit {
       position: 'top-end',
       width: 400,
       icon: 'info',
-      title: 'Plan creado',
+      title: 'Producto creado',
       showConfirmButton: false,
       timer: 1500
     })
@@ -85,11 +85,16 @@ export class PanelCrearPlanesComponent implements OnInit {
   
   
   
-  eliminarplan(idplan: number){
-    this.servicio.eliminarplan(idplan).subscribe(
+  eliminarproducto(iden: number){
+    this.servicio.eliminarproducto(iden).subscribe(
       res =>{
-         this.verplanes()
+         this.verproductos()
       }
     )
   }
+
+
+
+
+
 }

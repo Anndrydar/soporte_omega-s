@@ -1,0 +1,48 @@
+<div class="container p-4">
+    <form class="row g-3" [formGroup]="productoForm" (ngSubmit)="crearproductos()">
+        <div class="col-auto">
+            <label
+             class="visually-hidden">Producto</label>
+            <input type="text" class="form-control" formControlName="nombre"
+             placeholder="Nombre del producto">
+          </div>
+          <div class="col-auto">
+            <label
+             class="visually-hidden">Link</label>
+            <input type="text" class="form-control" formControlName="url"
+             placeholder="Url para acceder al producto">
+          </div>
+        <div class="col-auto">
+          <button type="submit" class="btn mb-3" style="border: none;"><img src="./assets/create.png" height="22px" alt=""></button>
+        </div>
+      </form>
+    </div>
+    
+    <div class="table-wrapper-scroll-y my-custom-scrollbar py-2"  style="max-height: 200px; overflow-y: auto;">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Producto</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Link</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Editar</th>
+              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Eliminar</th>
+            </tr>
+          </thead>  
+          <tbody>
+            <tr *ngFor="let pr of productos | paginate: { itemsPerPage: 10, currentPage: p }">
+              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{pr.nombre}}</td>
+              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{pr.url}}</td>
+              <td style="text-align: center; color: blue;"><a [routerLink]="['/producto/edit',pr.iden]" class="btn">
+                <img src="./assets/edit.png" height="18px" alt="">
+              </a></td>
+              <td style="text-align: center; color: red;"><a (click)="eliminarproducto(pr.iden)"  class="btn">
+                <img src="./assets/delete.png" height="18px" alt="">
+              </a></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    <div class="container-fluid py-2 d-flex justify-content-center">
+      <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"  nextLabel="Siguiente"></pagination-controls>
+    </div>
+

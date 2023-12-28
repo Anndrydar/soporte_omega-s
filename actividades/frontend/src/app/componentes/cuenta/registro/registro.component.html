@@ -107,10 +107,10 @@ h6{
     <div class="form-container">
         <img src="./assets/cuenta.png" class="imagen_arriba" />
         <form class="login-form" [formGroup]="empresaForm" (ngSubmit)="crearEmpresa()">
-            <h3>Create Account</h3>
-            <input placeholder="RUC" type="text" formControlName="ruc" required>
+            <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Create Account</h3>
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" placeholder="RUC" type="text" formControlName="ruc" required>
             <div *ngIf="empresaForm.get('ruc').hasError('required') && empresaForm.get('ruc').touched">
-                <h6>RUC es requerido</h6>
+                <h6 >RUC es requerido</h6>
             </div>
             <div *ngIf="empresaForm.get('ruc').hasError('minlength')">
                 <h6>RUC debe tener al menos 13 digitos</h6>
@@ -118,14 +118,14 @@ h6{
             <div *ngIf="empresaForm.get('ruc').hasError('maxlength')">
                 <h6>RUC no debe tener más de 20 digitos</h6>
             </div>
-            <input placeholder="Correo Electrónico" type="text" formControlName="email" required>
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" placeholder="Correo Electrónico" type="text" formControlName="email" required>
             <div *ngIf="empresaForm.get('email').hasError('required') && empresaForm.get('email').touched">
                 <h6>Email es requerido</h6>
             </div>
             <div *ngIf="empresaForm.get('email').hasError('pattern')">
                 <h6>Email invalido</h6>
             </div>
-            <input placeholder="Teléfono" type="text" formControlName="telefono" required>
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: small;" placeholder="Teléfono" type="text" formControlName="telefono" required>
             <div *ngIf="empresaForm.get('telefono').hasError('required') && empresaForm.get('telefono').touched">
                 <h6>Telefono es requerido</h6>
             </div>
@@ -135,14 +135,14 @@ h6{
             <div *ngIf="empresaForm.get('telefono').hasError('maxlength')">
                 <h6>Telefono no debe tener más de 10 digitos</h6>
             </div>
-            <input placeholder="Dirección" type="text" formControlName="direccion" required>
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" placeholder="Dirección" type="text" formControlName="direccion" required>
             <div *ngIf="empresaForm.get('direccion').hasError('required') && empresaForm.get('direccion').touched">
                 <h6>Direccion es requerida</h6>
             </div>
             <div *ngIf="empresaForm.get('direccion').hasError('minlength')">
                 <h6>Direccion debe tener al menos 10 caracteres</h6>
             </div>
-            <input placeholder="Nombre de la Empresa" type="text" formControlName="nombre_empresa" required>
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" placeholder="Nombre de la Empresa" type="text" formControlName="nombre_empresa" required>
             <div *ngIf="empresaForm.get('nombre_empresa').hasError('required') && empresaForm.get('nombre_empresa').touched">
                 <h6>Nombre de la empresa es requerido</h6>
             </div>
@@ -152,7 +152,7 @@ h6{
             <div *ngIf="empresaForm.get('nombre_empresa').hasError('maxlength')">
                 <h6>Nombre de la empresa no debe tener mas de 100 caracteres</h6>
             </div>
-            <input placeholder="Nombre de Contacto" type="text" formControlName="contacto" required>
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" placeholder="Nombre de Contacto" type="text" formControlName="contacto" required>
             <div *ngIf="empresaForm.get('contacto').hasError('required') && empresaForm.get('contacto').touched">
                 <h6>Nombre de algun contacto es requerido</h6>
             </div>
@@ -162,7 +162,7 @@ h6{
             <div *ngIf="empresaForm.get('nombre_empresa').hasError('maxlength')">
                 <h6>Nombre de algun contacto no debe tener mas de 70 caracteres</h6>
             </div>       
-            <input placeholder="Ciudad" type="text" formControlName="ciudad"  required>
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" placeholder="Ciudad" type="text" formControlName="ciudad"  required>
             <div *ngIf="empresaForm.get('ciudad').hasError('required') && empresaForm.get('ciudad').touched">
                 <h6>Ciudad es requerida</h6>
             </div>
@@ -172,7 +172,7 @@ h6{
             <div *ngIf="empresaForm.get('ciudad').hasError('maxlength')">
                 <h6>Ciudad no debe tener mas de 60 caracteres</h6>
             </div>
-            <input placeholder="Contraseña" type="password" formControlName="password" required>
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: small;" placeholder="Contraseña" type="password" formControlName="password" required>
             <div *ngIf="empresaForm.get('password').hasError('required') && empresaForm.get('password').touched">
                 <h6>Contraseña es requerida</h6>
             </div>
@@ -183,15 +183,15 @@ h6{
                 <h6>Contraseña no debe tener mas de 20 caracteres</h6>
             </div>
             <div class="form-group">
-                <select class="form-select form-select-sm" formControlName="idplan">
-                    <option value="">Seleccione plan</option>
-                     <option *ngFor="let p of planes" value="{{p.idplan}}">{{p.descripcion}}</option>
+                <select style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" class="form-select form-select-sm" formControlName="idplan">
+                    <option  style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" value="">Seleccione plan</option>
+                     <option style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" *ngFor="let p of planes" value="{{p.idplan}}">{{p.descripcion}}</option>
                    </select>
             </div>
             <div *ngIf="empresaForm.get('idplan').hasError('required') && empresaForm.get('idplan').touched">
                 <h6>Plan es requerido</h6>
             </div>
-            <input type="submit" value="¡Suscribirme!" >
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" type="submit" value="¡Suscribirme!" >
         </form>
     </div>
 </div>

@@ -1,40 +1,16 @@
 const {pool} = require('../db/conexion')
 
 
-const crearEmpresa = async(req,res)=>{
-  const {nombre,imagen_logo,imagen_home} = req.body;
-  const insersion = await pool.query('insert into nombres_empresa(nombre,imagen_logo,imagen_home)values($1,$2,$3)',[
-    nombre,
-    imagen_logo,
-    imagen_home
-  ])
-  res.json({
-    message: 'Datos de la empresa guardados sastifactoriamente',
-    body:{
-      nombres_empresa:{nombre,imagen_logo,imagen_home}
-    }
-  })
-}
-
-
-
-const verEmpresa = async(req,res)=>{
-const respuesta = await pool.query('select * from nombres_empresa order by fecha_hora desc limit 1')
-res.status(200).json(respuesta.rows);
-}
-
-
 
 
 const crearEnlaces = async(req,res)=>{
-const {idName,nombre,url} = req.body;
-const guarda = await pool.query('insert into enlaces(idname,nombre,url)values($1,$2,$3)',[
-  idName,
+const {nombre,url} = req.body;
+const guarda = await pool.query('insert into enlaces(nombre,url)values($1,$2)',[
   nombre,
   url
 ])
 res.json({
-  message: 'Enlace creado sastifactoriamente',
+  message: 'Producto creado sastifactoriamente',
   body:{
       enlaces:{nombre,url}
   }
@@ -45,15 +21,49 @@ res.json({
 
 const verEnlaces = async(req,res)=>{
 const respuesta = await 
-pool.query('select e.nombre, e.url from nombres_empresa n join enlaces e on  n.idname = e.idname')
+pool.query('select iden,nombre,url from enlaces')
 res.status(200).json(respuesta.rows);
 }
 
 
+const verenlace = async(req,res)=>{
+const iden = req.params.iden
+const response = await pool.query('select iden, nombre,url from enlaces where iden = $1',
+[
+  iden
+])
+res.status(200).json(response.rows)
+}
+
+
+editarenlace = async(req,res)=>{
+const iden = req.params.iden
+const {nombre,url} = req.body
+const update = await pool.query('update enlaces set nombre = $1, url = $2 where iden = $3',[
+  nombre,
+  url,
+  iden
+])
+res.json({
+  message: 'Producto actualizado sastifactoriamente'
+})
+}
+
+eliminarenlace = async(req,res)=>{
+  const iden = req.params.iden
+  const elimina = await pool.query('delete from enlaces where iden = $1',[
+    iden
+  ])
+  res.json({
+    message: 'Producto eliminado sastifactoriamente'
+  })
+}
+
 
 module.exports = {
-    verEmpresa,
-    crearEmpresa,
     crearEnlaces,
-    verEnlaces
+    verEnlaces,
+    verenlace,
+    editarenlace,
+    eliminarenlace
 }

@@ -8,6 +8,10 @@ import { PanelCrearTecnicosComponent } from './componentes/panel-crear-tecnicos/
 import { EditTecnicoComponent } from './componentes/editar/edit-tecnico/edit-tecnico.component';
 import { PanelCrearServiciosComponent } from './componentes/panel-crear-servicios/panel-crear-servicios.component';
 import { EditServicioComponent } from './componentes/editar/edit-servicio/edit-servicio.component';
+import { PanelCrearPlanesComponent } from './componentes/panel-crear-planes/panel-crear-planes.component';
+import { EditPlanComponent } from './componentes/editar/edit-plan/edit-plan.component';
+import { PanelCrearProductosComponent } from './componentes/panel-crear-productos/panel-crear-productos.component';
+import { EditProductoComponent } from './componentes/editar/edit-producto/edit-producto.component';
 
 
 const routes: Routes = [
@@ -49,6 +53,27 @@ const routes: Routes = [
   {
     path: 'servicio/edit/:idservicio',
     component: EditServicioComponent
+  },
+
+
+  //planes
+  {
+    path: 'plan',
+    component: PanelCrearPlanesComponent
+  },
+  {
+    path: 'plan/edit/:idplan',
+    component: EditPlanComponent
+  },
+
+  //productos
+  {
+    path: 'producto',
+    component: PanelCrearProductosComponent
+  },
+  {
+    path: 'producto/edit/:iden',
+    component: EditProductoComponent
   },
 ];
 

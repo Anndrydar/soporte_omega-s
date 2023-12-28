@@ -1,0 +1,13 @@
+<div class="container p-4">
+    <form class="row g-3" (ngSubmit)="editar()">
+        <div class="col-auto">
+            <label
+             class="visually-hidden">Descripcion</label>
+            <input type="text" class="form-control" [(ngModel)]="plan.descripcion" [ngModelOptions]="{standalone: true}"
+             placeholder="Descripcion de plan">
+          </div>
+        <div class="col-auto">
+          <button type="submit" class="btn mb-3" style="border: none;"><img src="./assets/edit.png" height="22px" alt=""></button>
+        </div>
+      </form>
+    </div>

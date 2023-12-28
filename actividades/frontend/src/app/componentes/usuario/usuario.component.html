@@ -102,17 +102,17 @@
   <div class="form-container">
     <img class="imagen_arriba" src="./assets/sesion.png" alt="Sesión"/>
     <form class="login-form">
-      <h3>login</h3>
+      <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;">login</h3>
       <div class="input-group">
         <img src="./assets/user.png" alt="Icono de correo electrónico" class="input-icon">
-        <input type="text" id="email" name="email" placeholder="correo electrónico" [(ngModel)]="sesiones.email" [ngModelOptions]="{standalone: true}" required>
+        <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" type="text" id="email" name="email" placeholder="correo electrónico" [(ngModel)]="sesiones.email" [ngModelOptions]="{standalone: true}" required>
       </div>
       <div class="input-group">
         <img src="./assets/candado.png" alt="Icono de contraseña" class="input-icon">
-        <input type="password" id="password" name="password" placeholder="contraseña" [(ngModel)]="sesiones.password" [ngModelOptions]="{standalone: true}" required>
+        <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" type="password" id="password" name="password" placeholder="contraseña" [(ngModel)]="sesiones.password" [ngModelOptions]="{standalone: true}" required>
       </div>
-      <button (click)="iniciar()">Entrar</button>
-      <p class="register-link">¿No tienes cuenta? <a href="/cuenta" class="show-register">Regístrate</a></p>
+      <button style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: white;font-size: small;" (click)="iniciar()">Entrar</button>
+      <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" class="register-link">¿No tienes cuenta? <a style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" href="/cuenta" class="show-register">Regístrate</a></p>
     </form>
   </div>
 </div>

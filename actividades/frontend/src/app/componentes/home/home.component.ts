@@ -13,11 +13,10 @@ export class HomeComponent  implements OnInit{
   servicios: any;
   empresa: any;
   productos: any;
-  descripcion: String;
+  descripcion = '';
   social: any;
   mis: any;
   msm: any;
-  decodedImage: any
   image: string;
   
   public logos = [

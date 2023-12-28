@@ -4,6 +4,8 @@ import { Categoria } from '../interfaces/categoria';
 import {Observable} from 'rxjs'
 import { Tecnico } from '../interfaces/tecnico';
 import { Servicio } from '../interfaces/servicio';
+import { Plan } from '../interfaces/plan';
+import { Producto } from '../interfaces/producto';
 
 @Injectable({
   providedIn: 'root'
@@ -82,4 +84,59 @@ editarservicio(idservicio: number, servicio: Servicio){
 eliminarservicio(idservicio: number){
 return this.http.delete(this.API + '/servicio/' +idservicio)
 }
+
+
+
+
+
+
+//planes
+crearplan(plan: Plan){
+return this.http.post(this.API + '/planes',plan)
+}
+
+
+verplanes(){
+  return this.http.get(this.API + '/planes')
+}
+
+verplan(idplan: number): Observable<Plan>{
+return this.http.get<Plan>(this.API + '/plan/' +idplan)
+}
+
+editarplan(idplan: number, plan: Plan){
+  return this.http.put(this.API + '/plan/' +idplan,plan)
+}
+
+
+eliminarplan(idplan: number){
+return this.http.delete(this.API + '/plan/' +idplan)
+}
+
+
+//productos
+crearproducto(producto: Producto){
+  return this.http.post(this.API + '/enlaces',producto)
+  }
+  
+  
+  verproductos(){
+    return this.http.get(this.API + '/enlaces')
+  }
+  
+  verproducto(iden: number): Observable<Producto>{
+  return this.http.get<Producto>(this.API + '/enlace/' +iden)
+  }
+  
+  editarproducto(iden: number, producto: Producto){
+    return this.http.put(this.API + '/enlace/' +iden,producto)
+  }
+  
+  
+  eliminarproducto(iden: number){
+  return this.http.delete(this.API + '/enlace/' +iden)
+  }
+
+
+
 }

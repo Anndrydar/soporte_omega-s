@@ -17,6 +17,9 @@ import { TecnicoComponent } from './componentes/tecnico/tecnico.component';
 import { EditTecnicoComponent } from './componentes/editar/edit-tecnico/edit-tecnico.component';
 import { EditServicioComponent } from './componentes/editar/edit-servicio/edit-servicio.component';
 import { PanelCrearPlanesComponent } from './componentes/panel-crear-planes/panel-crear-planes.component';
+import { EditPlanComponent } from './componentes/editar/edit-plan/edit-plan.component';
+import { PanelCrearProductosComponent } from './componentes/panel-crear-productos/panel-crear-productos.component';
+import { EditProductoComponent } from './componentes/editar/edit-producto/edit-producto.component';
 
 
 
@@ -34,7 +37,10 @@ import { PanelCrearPlanesComponent } from './componentes/panel-crear-planes/pane
     TecnicoComponent,
     EditTecnicoComponent,
     EditServicioComponent,
-    PanelCrearPlanesComponent
+    PanelCrearPlanesComponent,
+    EditPlanComponent,
+    PanelCrearProductosComponent,
+    EditProductoComponent
   ],
   imports: [
     BrowserModule,
