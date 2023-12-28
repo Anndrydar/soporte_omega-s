@@ -52,7 +52,7 @@
     <div *ngFor="let s of servicios; let i = index" class="col-md-4 mb-3">
       <div class="card card-hover-effect shadow rounded" style="background-color: rgb(25, 25, 43);color: white; border: none;" (click)="toggleDetails(i)">
         <div class="card-body">
-          <h5 class="card-title text-center font-weight-bold" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: small;">{{s.descripcion}}</h5>
+          <h5 class="card-title text-center font-weight-bold" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: small;font-weight: bold;">{{s.descripcion}}</h5>
           <div class="detalle-servicio" [class.visible]="s.showDetails">
             <p class="card-text " style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center;font-size: small;">Categoria: {{s.categoriadescripcion}}</p>
             <p class="card-text" style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: justify; font-size: small;">Tecnico: {{s.nombres}}</p>
@@ -64,7 +64,7 @@
               placeholder="Escribele un mensaje al técnico"
               (click)="$event.stopPropagation()"
               rows="4" 
-              style="resize: vertical;font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;"
+              style="resize: vertical;font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;color: rgb(25, 25, 43);"
             ></textarea>
             <!-- Botón de enviar -->
             <button class="btn btn-success" style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" (click)="enviarmensaje(s.telefono, s.descripcion, s.comentario)">
