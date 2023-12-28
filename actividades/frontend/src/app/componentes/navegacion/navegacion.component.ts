@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServicioEmpresaService } from 'src/app/servicios/servicio-empresa.service';
+import { ServicioInformacionService } from 'src/app/servicios/servicio-informacion.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -24,7 +25,6 @@ constructor(
   ){}
 ngOnInit(): void {
 }
-
 
 
 

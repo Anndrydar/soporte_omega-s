@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioEmpresaService } from 'src/app/servicios/servicio-empresa.service';
+import { ServicioInformacionService } from 'src/app/servicios/servicio-informacion.service';
 
 @Component({
   selector: 'app-consulta-ruc',
@@ -10,14 +11,18 @@ export class ConsultaRucComponent implements OnInit {
 p: number = 1;
 personas: any= [];
 ruc:String;
+social: any;
+productos:any;
 
 constructor(
-  private servicio: ServicioEmpresaService
+  private servicio: ServicioEmpresaService,
+  private service: ServicioInformacionService
 ){
 
 }
 ngOnInit(): void {
-    
+ this.verredesociales();
+ this.verproductos();   
 }
 
 
@@ -29,9 +34,23 @@ buscar(){
     }
   )
 }
-//1309182440001
 
 
+verredesociales(){
+  this.service.verredsocial().subscribe(
+    res  =>{
+      this.social = res
+    }
+  )
+}
+
+verproductos(){
+  this.servicio.verEnlace().subscribe(
+    res  =>{
+      this.productos = res
+    }
+  )
+}
 
 
 }
