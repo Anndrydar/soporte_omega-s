@@ -49,32 +49,32 @@ url text
 --Creacion de tabla empresa como sala de espera
 create table empresa(
 idEmpresa serial primary key,
+idplan serial,
 ruc varchar(20) unique,
 email text unique,
 telefono varchar(10),
 direccion text,
 nombre_empresa text,
 contacto text,
-fecha_ingreso date default current_date,
+fecha_ingreso timestamp default current_timestamp,
 ciudad text,
-password text,
-plan text
-);
+password text
+)
 
 
 --Creacion de tabla copia como clientes aceptados
 create table copia(
 idEmpresa serial primary key,
+idplan serial,
 ruc varchar(20) unique,
 email text unique,
 telefono varchar(10),
 direccion text,
 nombre_empresa text,
 contacto text,
-fecha_ingreso date default current_date,
+fecha_ingreso timestamp default current_timestamp,
 ciudad text,
-password text,
-plan text
+password text
 );
 
 --tabla planes
