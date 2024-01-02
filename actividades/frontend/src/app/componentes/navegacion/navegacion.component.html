@@ -1,7 +1,7 @@
 <div class="container-fluid py-2 " >
   <nav class="navbar bg-body-tertiary fixed-top" style="background-color: rgb(25, 25, 43); height: 40px;">
     <div class="container-fluid">
-      <a *ngFor="let l of logos" class="navbar-brand" href="/home"><img src="{{l.logo}}" height="15px" alt=""><small  style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: white;font-size: small;"> {{l.nombre}}</small>
+      <a *ngFor="let l of logos" class="navbar-brand"  routerLink="/home"><img src="{{l.logo}}" height="15px" alt=""><small  style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: white;font-size: small;"> {{l.nombre}}</small>
       </a>
       <div class="d-flex align-items-center">
         <button class="navbar-toggler ms-auto" style="border: none;"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
@@ -19,11 +19,11 @@
               <a class="nav-link active" aria-current="page" style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: white;font-size: small;">Informacion</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: white;font-size: small;">
+              <a class="nav-link dropdown-toggle" routerLink="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: white;font-size: small;">
                 Mas Opciones
               </a>
               <ul class="dropdown-menu">
-                <li><a style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" class="dropdown-item" href="/cuenta"><img src="./assets/cuenta.png" height="15px" alt=""> Crear cuenta</a></li>
+                <li><a style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" class="dropdown-item" routerLink="/cuenta"><img src="./assets/cuenta.png" height="15px" alt=""> Crear cuenta</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
