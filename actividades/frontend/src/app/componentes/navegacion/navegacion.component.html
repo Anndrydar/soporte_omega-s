@@ -1,5 +1,5 @@
 <div class="container-fluid py-2 " >
-  <nav class="navbar bg-body-tertiary fixed-top" style="background-color: rgb(25, 25, 43); height: 40px;">
+  <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(25, 25, 43); height: 40px;">
     <div class="container-fluid">
       <a *ngFor="let l of logos" class="navbar-brand"  routerLink="/home"><img src="{{l.logo}}" height="15px" alt=""><small  style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: white;font-size: small;"> {{l.nombre}}</small>
       </a>
@@ -15,10 +15,7 @@
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: white;font-size: small;">Informacion</a>
-            </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown" style="background-color: rgb(42, 42, 86);">
               <a class="nav-link dropdown-toggle" routerLink="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: white;font-size: small;">
                 Mas Opciones
               </a>

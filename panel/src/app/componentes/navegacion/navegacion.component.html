@@ -1,60 +1,78 @@
-<!-- app.component.html -->
-
-<div class="container-fluid p-0">
-    <div class="row m-0">
-      <!-- Barra de navegación vertical con color de fondo personalizado -->
-      <nav class="col-md-2 d-none d-md-block sidebar bg-custom">
-        <div class="sidebar-sticky h-100">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a style="color: rgb(42, 42, 86);" class="nav-link active" routerLink=" ">
-                Panel de autorizacion de clientes
-              </a>
-            </li>
-            <li class="nav-item">
-              <a style="color: rgb(42, 42, 86);" class="nav-link" routerLink="/aceptadas">
-                Panel de clientes aceptados
-              </a>
-            </li>
-            <li class="nav-item">
-              <a style="color: rgb(42, 42, 86);" class="nav-link" routerLink="/categoria">
-                Panel de categorias
-              </a>
-            </li>
-            <li class="nav-item">
-              <a style="color: rgb(42, 42, 86);" class="nav-link" routerLink="/tecnico">
-                Panel de tecnicos
-              </a>
-            </li>
-            <li class="nav-item">
-              <a style="color: rgb(42, 42, 86);" class="nav-link" routerLink="/servicio">
-                Panel de servicios
-              </a>
-            </li>
-            <li class="nav-item">
-              <a style="color: rgb(42, 42, 86);" class="nav-link" routerLink="/plan">
-                Panel de planes
-              </a>
-            </li>
-            <li class="nav-item">
-              <a style="color: rgb(42, 42, 86);" class="nav-link" routerLink="/producto">
-                Panel de productos
-              </a>
-            </li>
-            <li class="nav-item">
-              <a style="color: rgb(42, 42, 86);" class="nav-link" routerLink="/contacto">
-                Panel de contactos
-              </a>
-            </li>
-            <!-- Agrega más opciones según sea necesario -->
-          </ul>
+  <div class="container-fluid py-4">
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(25, 25, 43); height: 40px;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                    <img src="./assets/omega-s.png"
+                     alt="Logo"
+                     height="18px" class="d-inline-block align-text-top">
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="font-size: small; color: white;" routerLink="/">Panel asistencia omega</a>
+              </li>
+              <li style="background-color: rgb(42, 42, 86);" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="font-size: small;color: white;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Paneles de administracion
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a style="background-color: rgb(20, 20, 42);color: white; font-size: small;" class="nav-link" routerLink="/categoria">
+                      Panel de categorias
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="background-color: rgb(20, 20, 42);color: white; font-size: small;" class="nav-link" routerLink="/tecnico">
+                      Panel de tecnicos
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="background-color: rgb(20, 20, 42);color: white; font-size: small;" class="nav-link" routerLink="/servicio">
+                      Panel de servicios
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="background-color: rgb(20, 20, 42);color: white; font-size: small;" class="nav-link" routerLink="/plan">
+                      Panel de planes
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="background-color: rgb(20, 20, 42);color: white; font-size: small;" class="nav-link" routerLink="/producto">
+                      Panel de productos
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="background-color: rgb(20, 20, 42);color: white; font-size: small;" class="nav-link" routerLink="/contacto">
+                      Panel de contactos
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown" style="background-color: rgb(42, 42, 86);">
+                <a class="nav-link dropdown-toggle" style="font-size: small;color: white;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Paneles de visualizaciones
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a style="background-color: rgb(20, 20, 42);color: white; font-size: small;" class="nav-link active" routerLink="/">
+                      Panel de autorizacion de clientes
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="background-color: rgb(20, 20, 42);color: white; font-size: small;" class="nav-link" routerLink="/aceptadas">
+                      Panel de clientes aceptados
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
-  
-      <!-- Contenido principal con margen -->
-      <main role="main" class="col-md-10 mt-3">
-        <!-- Aquí va el contenido principal de tu aplicación Angular -->
-        <router-outlet></router-outlet>
-      </main>
     </div>
-  </div>
