@@ -32,7 +32,7 @@
   </div>
 
   <div class="container-fluid d-flex justify-content-center align-items-center">
-    <form>
+    <form class="form-inline">
       <div class="input-group mb-3">
         <span><input type="text"  style="font-family: Verdana, Geneva, Tahoma, sans-serif;width: 500px; font-size: small;" [(ngModel)]="descripcion" [ngModelOptions]="{standalone: true}" (keyup)="buscar()" class="col-xs-4 rounded"  class="form-control" placeholder="¿Qué servicios buscas?" aria-label="Recipient's username" aria-describedby="basic-addon2"></span>
         <div class="input-group-append">
@@ -49,7 +49,7 @@
 
 <div class="container-fluid py-2" style="max-height: 150px; overflow-y: auto;">
   <div class="row">
-    <div *ngFor="let s of servicios; let i = index" class="col-md-4 mb-3">
+    <div *ngFor="let s of servicios; let i = index" class="col-12 col-sm-6 col-md-4 mb-3">
       <div class="card card-hover-effect shadow rounded" style="background-color: rgb(25, 25, 43);color: white; border: none;" (click)="toggleDetails(i)">
         <div class="card-body">
           <h5 class="card-title text-center font-weight-bold" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: small;font-weight: bold;">{{s.descripcion}}</h5>
@@ -57,6 +57,7 @@
             <p class="card-text " style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center;font-size: small;">Categoria: {{s.categoriadescripcion}}</p>
             <p class="card-text" style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: justify; font-size: small;">Tecnico: {{s.nombres}}</p>
             <p class="card-text" style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: justify; font-size: small;">Origen del tecnico: {{s.ciudad}}</p>
+            <p class="card-text" style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: justify; font-size: small;">Duracion del mantenimiento: {{s.duracion}}</p>
             <!-- Textarea con estilos de Bootstrap -->
             <textarea
               class="form-control mb-2"
