@@ -33,13 +33,11 @@
 
   <div class="container-fluid d-flex justify-content-center align-items-center">
     <form class="form-inline">
-      <div class="input-group mb-3">
-        <span><input type="text"  style="font-family: Verdana, Geneva, Tahoma, sans-serif;width: 500px; font-size: small;" [(ngModel)]="descripcion" [ngModelOptions]="{standalone: true}" (keyup)="buscar()" class="col-xs-4 rounded"  class="form-control" placeholder="¿Qué servicios buscas?" aria-label="Recipient's username" aria-describedby="basic-addon2"></span>
-        <div class="input-group-append">
+      <div class="input-group mb-3"  style="width: 500px;">
+        <input type="text"  style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" [(ngModel)]="descripcion" [ngModelOptions]="{standalone: true}" (keyup)="buscar()" class="col-xs-4 rounded"  class="form-control" placeholder="¿Qué servicios buscas?" aria-label="Recipient's username" aria-describedby="basic-addon2">
           <button class="btn btn-outline-primary" style="background-color: rgb(25, 25, 43);" type="button">
             <img src="./assets/lupa.png" height="15px" alt="">
           </button>
-        </div>
       </div>
     </form>
   </div>
