@@ -77,6 +77,24 @@ ciudad text,
 password text
 );
 
+
+
+
+--Creacion de tabla desactivado como clientes inactivos
+create table desactivado(
+idEmpresa serial primary key,
+idplan serial,
+ruc varchar(20) unique,
+email text unique,
+telefono varchar(10),
+direccion text,
+nombre_empresa text,
+contacto text,
+fecha_ingreso timestamp default current_timestamp,
+ciudad text,
+password text
+);
+
 --tabla planes
 create table planes(
 idplan serial primary key,

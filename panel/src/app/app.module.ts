@@ -21,6 +21,8 @@ import { EditPlanComponent } from './componentes/editar/edit-plan/edit-plan.comp
 import { PanelCrearProductosComponent } from './componentes/panel-crear-productos/panel-crear-productos.component';
 import { EditProductoComponent } from './componentes/editar/edit-producto/edit-producto.component';
 import { EditContactoComponent } from './componentes/editar/edit-contacto/edit-contacto.component';
+import { DesactivadosComponent } from './componentes/desactivados/desactivados.component';
+import { EditClienteComponent } from './componentes/editar/edit-cliente/edit-cliente.component';
 
 
 
@@ -42,7 +44,9 @@ import { EditContactoComponent } from './componentes/editar/edit-contacto/edit-c
     EditPlanComponent,
     PanelCrearProductosComponent,
     EditProductoComponent,
-    EditContactoComponent
+    EditContactoComponent,
+    DesactivadosComponent,
+    EditClienteComponent
   ],
   imports: [
     BrowserModule,

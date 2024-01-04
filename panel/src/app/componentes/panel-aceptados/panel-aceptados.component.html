@@ -26,6 +26,9 @@
           <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Ciudad</th>
           <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Empresa</th>
           <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Ingreso</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Plan</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Editar</th>
+          <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Desactivar cliente</th>
         </tr>
       </thead>  
       <tbody>
@@ -35,6 +38,16 @@
           <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{a.ciudad}}</td>
           <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{a.nombre_empresa}}</td>
           <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{a.fecha_ingreso}}</td>
+          <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{a.descripcion}}</td>
+          <td style="text-align: center; color: blue;"><a [routerLink]="['/aceptado/edit',a.idempresa]" class="btn">
+            <img src="./assets/edit.png" height="18px" alt="">
+          </a></td>
+          <td style="text-align: center; color: red;"><a (click)=
+            "desactivarcliente(a.idempresa,a.ruc,a.email,a.telefono, 
+            a.direccion,a.nombre_empresa,a.contacto,a.fecha_ingreso,a.ciudad,
+            a.password,a.idplan)" class="btn">
+            <img src="./assets/offon.png" height="18px" alt="">
+          </a></td>
         </tr>
       </tbody>
     </table>

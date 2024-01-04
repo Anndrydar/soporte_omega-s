@@ -14,6 +14,8 @@ import { PanelCrearProductosComponent } from './componentes/panel-crear-producto
 import { EditProductoComponent } from './componentes/editar/edit-producto/edit-producto.component';
 import { PanelCrearContactoComponent } from './componentes/panel-crear-contacto/panel-crear-contacto.component';
 import { EditContactoComponent } from './componentes/editar/edit-contacto/edit-contacto.component';
+import { DesactivadosComponent } from './componentes/desactivados/desactivados.component';
+import { EditClienteComponent } from './componentes/editar/edit-cliente/edit-cliente.component';
 
 
 const routes: Routes = [
@@ -22,14 +24,20 @@ const routes: Routes = [
     component: PanelAutorizarComponent
   },
 
+  //aceptados
+  {
+    path: 'aceptadas',
+    component: PanelAceptadosComponent
+  },
+  {
+    path: 'aceptado/edit/:idempresa',
+    component: EditClienteComponent
+  },
+
   //categorias
   {
     path: 'categoria',
     component: PanelCrearCategoriasComponent
-  },
-  {
-    path: 'aceptadas',
-    component: PanelAceptadosComponent
   },
   {
     path: 'categoria/edit/:idcategoria',
@@ -91,6 +99,11 @@ const routes: Routes = [
   },
 
 
+  //desactivados
+  {
+    path: 'desactivado',
+    component: DesactivadosComponent
+  },
 ];
 
 
