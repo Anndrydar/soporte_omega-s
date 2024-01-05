@@ -40,8 +40,8 @@ versolicitud(idempresa: Number): Observable<Empresa>{
   return this.http.get<Empresa>(this.API + '/aceptado/' +idempresa)
   }
 
-  editarsolicitud(idempresa:Number, empresa: Empresa): Observable<Empresa>{
-    return this.http.put<Empresa>(this.API + '/aceptado/' +idempresa,empresa)
+  editarsolicitud(idempresa:Number, empresa: Empresa){
+    return this.http.put(this.API + '/aceptado/' +idempresa,empresa)
     }
 
 

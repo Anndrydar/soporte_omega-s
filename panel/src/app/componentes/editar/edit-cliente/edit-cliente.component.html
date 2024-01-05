@@ -1,1 +1,71 @@
-<p>edit-cliente works!</p>
+<div class="container p-4">
+    <form class="row g-3" (ngSubmit)="editar()">
+        <div class="col-auto">
+            <label class="visually-hidden">Ruc</label>
+            <input type="text" class="form-control" [(ngModel)]="empresa.ruc"
+            [ngModelOptions]="{standalone: true}"
+             placeholder="Ruc">
+          </div>
+        <div class="col-auto">
+            <label class="visually-hidden">Email</label>
+            <input type="text" class="form-control" [(ngModel)]="empresa.email"
+            [ngModelOptions]="{standalone: true}"
+             placeholder="Email">
+          </div>
+          <div class="col-auto">
+            <label class="visually-hidden">Telefono</label>
+            <input type="text" class="form-control" [(ngModel)]="empresa.telefono"
+            [ngModelOptions]="{standalone: true}"
+             placeholder="Telefono">
+          </div>
+          <div class="col-auto">
+            <label class="visually-hidden">Direccion</label>
+            <input type="text" class="form-control" [(ngModel)]="empresa.direccion"
+            [ngModelOptions]="{standalone: true}"
+             placeholder="Direccion">
+          </div>
+          <div class="col-auto">
+            <label class="visually-hidden">Empresa</label>
+            <input type="text" class="form-control" [(ngModel)]="empresa.nombre_empresa"
+            [ngModelOptions]="{standalone: true}"
+             placeholder="Empresa">
+          </div>
+          <div class="col-auto">
+            <label class="visually-hidden">Contacto</label>
+            <input type="text" class="form-control" [(ngModel)]="empresa.contacto"
+            [ngModelOptions]="{standalone: true}"
+             placeholder="Contacto">
+          </div>
+          <div class="col-auto">
+            <label class="visually-hidden">Ingreso</label>
+            <input type="datetime" class="form-control" [(ngModel)]="empresa.fecha_ingreso"
+            [ngModelOptions]="{standalone: true}"
+             placeholder="Ingreso">
+          </div>
+          <div class="col-auto">
+            <label class="visually-hidden">Ciudad</label>
+            <input type="text" class="form-control" [(ngModel)]="empresa.ciudad"
+            [ngModelOptions]="{standalone: true}"
+             placeholder="Ciudad">
+          </div>
+          <div class="col-auto">
+            <label  class="visually-hidden">Password</label>
+            <input type="text" class="form-control" [(ngModel)]="empresa.password"
+            [ngModelOptions]="{standalone: true}"
+             placeholder="Password">
+          </div>
+          <div class="col-auto">
+            <div class="form-group">
+                <select  class="form-select form-select-sm" [(ngModel)]="empresa.idplan"
+                [ngModelOptions]="{standalone: true}">
+                    <option *ngFor="let p of planes" value="{{p.idplan}}" >
+                        Plan: {{p.descripcion}}
+                    </option>
+                  </select>
+            </div>
+          </div>
+        <div class="col-auto">
+          <button type="submit" class="btn mb-3" style="border: none;"><img src="./assets/edit.png" height="22px" alt=""></button>
+        </div>
+      </form>
+    </div>
