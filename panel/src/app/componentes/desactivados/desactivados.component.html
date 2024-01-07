@@ -1,7 +1,7 @@
 <div style="margin-top: 50px;" class="container-fluid py-4 d-flex justify-content-center align-items-center">
     <form>
       <div class="input-group mb-3" style="width: 500px;">
-      <input type="text" [(ngModel)]="nombre_empresa" [ngModelOptions]="{standalone: true}" (keyup)="buscarPorNombre()" class="form-control" placeholder="Busca empresas desactivadas" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;" type="text" [(ngModel)]="nombre_empresa" [ngModelOptions]="{standalone: true}" (keyup)="buscarPorNombre()" class="form-control" placeholder="Busca empresas desactivadas" aria-label="Recipient's username" aria-describedby="basic-addon2">
           <button class="btn btn-outline-primary" style="background-color:rgb(25, 25, 43);" (click)="buscarPorNombre()"  type="button">
             <img src="./assets/lupa.png" height="15px" alt="">
           </button>
@@ -21,24 +21,24 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Ruc</th>
-            <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Email</th>
-            <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Ciudad</th>
-            <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Empresa</th>
-            <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Ingreso</th>
-            <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Plan</th>
-            <th style="text-align: center; background-color: rgb(25, 25, 43);;color: white;">Activar cliente</th>
+            <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center; background-color: rgb(25, 25, 43);;color: white;">Ruc</th>
+            <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center; background-color: rgb(25, 25, 43);;color: white;">Email</th>
+            <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center; background-color: rgb(25, 25, 43);;color: white;">Ciudad</th>
+            <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center; background-color: rgb(25, 25, 43);;color: white;">Empresa</th>
+            <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center; background-color: rgb(25, 25, 43);;color: white;">Ingreso</th>
+            <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center; background-color: rgb(25, 25, 43);;color: white;">Plan</th>
+            <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center; background-color: rgb(25, 25, 43);;color: white;">Activar cliente</th>
           </tr>
         </thead>  
         <tbody>
           <tr *ngFor="let d of desactivados | paginate: { itemsPerPage: 10, currentPage: p }">
-            <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{d.ruc}}</td>
-            <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{d.email}}</td>
-            <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{d.ciudad}}</td>
-            <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{d.nombre_empresa}}</td>
-            <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{d.fecha_ingreso}}</td>
-            <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{d.descripcion}}</td>
-            <td style="text-align: center; color: green;"><a (click)=
+            <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{d.ruc}}</td>
+            <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{d.email}}</td>
+            <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{d.ciudad}}</td>
+            <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{d.nombre_empresa}}</td>
+            <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{d.fecha_ingreso}}</td>
+            <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{d.descripcion}}</td>
+            <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;text-align: center; color: green;"><a (click)=
               "activarcliente(d.idempresa,d.ruc,d.email,d.telefono, 
               d.direccion,d.nombre_empresa,d.contacto,d.fecha_ingreso,d.ciudad,
               d.password,d.idplan)" class="btn">
