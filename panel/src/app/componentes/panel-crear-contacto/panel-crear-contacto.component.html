@@ -1,15 +1,16 @@
+<h1 style="text-align: center;font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger;color:rgb(47, 47, 113) ;">Panel contactos</h1>
 <div class="container p-4">
     <form class="row g-3" [formGroup]="contactoForm" (ngSubmit)="crearcontactos()">
         <div class="col-auto">
             <label
              class="visually-hidden">Contacto</label>
-            <input type="text" class="form-control" formControlName="nombre"
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" type="text" class="form-control" formControlName="nombre"
              placeholder="Nombre de red social">
           </div>
           <div class="col-auto">
             <label
              class="visually-hidden">Link</label>
-            <input type="text" class="form-control" formControlName="url"
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" type="text" class="form-control" formControlName="url"
              placeholder="Url para acceder a su perfil">
           </div>
         <div class="col-auto">
@@ -22,16 +23,16 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Cuenta</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Link</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Editar</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Eliminar</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Cuenta</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Link</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Editar</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Eliminar</th>
             </tr>
           </thead>  
           <tbody>
             <tr *ngFor="let c of contactos | paginate: { itemsPerPage: 10, currentPage: p }">
-              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{c.nombre}}</td>
-              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{c.url}}</td>
+              <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{c.nombre}}</td>
+              <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{c.url}}</td>
               <td style="text-align: center; color: blue;"><a [routerLink]="['/contacto/edit',c.idred]" class="btn">
                 <img src="./assets/edit.png" height="18px" alt="">
               </a></td>

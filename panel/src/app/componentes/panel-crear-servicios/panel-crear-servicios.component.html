@@ -1,10 +1,11 @@
+<h1 style="text-align: center;font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger;color:rgb(47, 47, 113) ;">Panel servicios</h1>
 <div class="container p-4">
     <form class="row g-3"  [formGroup]="servicioForm" (ngSubmit)="crearservicio()">
         <div class="col-auto">
             <div class="form-group">
-                <select  class="form-select form-select-sm" formControlName="idcategoria">
-                    <option value="">Seleccione una categoria</option>
-                    <option *ngFor="let c of categorias" value="{{c.idcategoria}}" >
+                <select style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" class="form-select form-select-sm" formControlName="idcategoria">
+                    <option style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" value="">Seleccione una categoria</option>
+                    <option style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" *ngFor="let c of categorias" value="{{c.idcategoria}}" >
                         {{c.descripcion}}
                     </option>
                   </select>
@@ -12,9 +13,9 @@
           </div>
         <div class="col-auto">
             <div class="form-group">
-                <select  class="form-select form-select-sm" formControlName="idtecnico">
-                    <option value="">Seleccione un tecnico</option>
-                    <option *ngFor="let t of tecnicos" value="{{t.idtecnico}}" >
+                <select style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;"  class="form-select form-select-sm" formControlName="idtecnico">
+                    <option style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" value="">Seleccione un tecnico</option>
+                    <option style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" *ngFor="let t of tecnicos" value="{{t.idtecnico}}" >
                         tecnico:{{t.nombres}} 
                         cedula:{{t.cedula}} 
                         celular:{{t.telefono}} 
@@ -25,17 +26,17 @@
         </div>
         <div class="col-auto">
             <label class="visually-hidden">Descripcion</label>
-            <input type="text" class="form-control" formControlName="descripcion"
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" type="text" class="form-control" formControlName="descripcion"
              placeholder="Descripcion de servicio">
           </div>
           <div class="col-auto">
             <label  class="visually-hidden">Precio</label>
-            <input type="number" class="form-control" formControlName="precio"
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" type="number" class="form-control" formControlName="precio"
              placeholder="Precio">
           </div>
           <div class="col-auto">
             <label  class="visually-hidden">Duracion</label>
-            <input type="text" class="form-control" formControlName="duracion"
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" type="text" class="form-control" formControlName="duracion"
             placeholder="duracion de servicio">
           </div>
         <div class="col-auto">
@@ -46,28 +47,28 @@
 
 
 
-    <div class="table-wrapper-scroll-y my-custom-scrollbar py-2"  style="max-height: 200px; overflow-y: auto;">
+    <div class="table-wrapper-scroll-y my-custom-scrollbar py-2"  style="max-height: 150px; overflow-y: auto;">
         <table class="table table-striped">
           <thead>
             <tr>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Categoria</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Tecnico</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Telefono</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Descripcion de servicio</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Duracion de servicio</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Precio del servicio</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Editar</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Eliminar</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Categoria</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Tecnico</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Telefono</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Descripcion de servicio</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Duracion de servicio</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Precio del servicio</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Editar</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Eliminar</th>
             </tr>
           </thead>  
           <tbody>
             <tr *ngFor="let s of servicios | paginate: { itemsPerPage: 10, currentPage: p }">
-              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.categoriadescripcion}}</td>
-              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.nombres}}</td>
-              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.telefono}}</td>
-              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.descripcion}}</td>
-              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.duracion}}</td>
-              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.precio}}$</td>
+              <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.categoriadescripcion}}</td>
+              <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.nombres}}</td>
+              <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.telefono}}</td>
+              <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.descripcion}}</td>
+              <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.duracion}}</td>
+              <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{s.precio}}$</td>
               <td style="text-align: center; color: blue;"><a [routerLink]="['/servicio/edit', s.idservicio]" class="btn">
                 <img src="./assets/edit.png" height="18px" alt="">
               </a></td>

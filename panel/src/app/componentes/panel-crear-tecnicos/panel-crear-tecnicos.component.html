@@ -1,29 +1,30 @@
+<h1 style="text-align: center;font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger;color:rgb(47, 47, 113) ;">Panel tecnicos</h1>
 <div class="container p-4">
     <form class="row g-3"  [formGroup]="tecnicoForm" (ngSubmit)="creartecnico()">
         <div class="col-auto">
             <label
              class="visually-hidden">Nombres</label>
-            <input type="text" class="form-control" formControlName="nombres"
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" type="text" class="form-control" formControlName="nombres"
              placeholder="Nombres">
           </div>
         <div class="col-auto">
           <label  class="visually-hidden">Cedula</label>
-          <input type="text" class="form-control" formControlName="cedula"
+          <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" type="text" class="form-control" formControlName="cedula"
            placeholder="Cedula">
         </div>
         <div class="col-auto">
             <label class="visually-hidden">Email</label>
-            <input type="text" class="form-control" formControlName="email"
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" type="text" class="form-control" formControlName="email"
              placeholder="Correo">
           </div>
           <div class="col-auto">
             <label  class="visually-hidden">Telefono</label>
-            <input type="text" class="form-control" formControlName="telefono"
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" type="text" class="form-control" formControlName="telefono"
              placeholder="Telefono">
           </div>
           <div class="col-auto">
             <label  class="visually-hidden">Ciudad</label>
-            <input type="text" class="form-control" formControlName="ciudad"
+            <input style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;" type="text" class="form-control" formControlName="ciudad"
             placeholder="ciudad">
           </div>
         <div class="col-auto">
@@ -38,22 +39,22 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Nombres</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Cedula</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Email</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Telefono</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Ciudad</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Editar</th>
-              <th style="text-align: center; background-color: rgb(25, 25, 43);color: white;">Eliminar</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Nombres</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Cedula</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Email</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Telefono</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Ciudad</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Editar</th>
+              <th style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; background-color: rgb(40, 40, 80);color: white;">Eliminar</th>
             </tr>
           </thead>  
           <tbody>
             <tr *ngFor="let t of tecnicos | paginate: { itemsPerPage: 10, currentPage: p }">
-              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{t.nombres}}</td>
-              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{t.cedula}}</td>
-              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{t.email}}</td>
-              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{t.telefono}}</td>
-              <td style="text-align: center; color: rgb(25, 25, 43); background-color: white;">{{t.ciudad}}</td>
+              <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{t.nombres}}</td>
+              <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{t.cedula}}</td>
+              <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{t.email}}</td>
+              <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{t.telefono}}</td>
+              <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;text-align: center; color: rgb(25, 25, 43); background-color: white;">{{t.ciudad}}</td>
               <td style="text-align: center; color: blue;"><a [routerLink]="['/tecnico/edit', t.idtecnico]" class="btn">
                 <img src="./assets/edit.png" height="18px" alt="">
               </a></td>
